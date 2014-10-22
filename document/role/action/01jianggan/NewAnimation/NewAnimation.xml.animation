@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<AnimationProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectDir>E:\ll\卓兄\我爸是村长\caocao\trunk\document\role\action\01jianggan\NewAnimation</ProjectDir>
+  <Version>1.3.0.1</Version>
+  <Resources>E:\ll\卓兄\我爸是村长\caocao\trunk\document\role\action\01jianggan\NewAnimation\Resources</Resources>
+  <Name>NewAnimation</Name>
+  <JsonFileName>NewAnimation.json</JsonFileName>
+  <JsonFolder>E:\ll\卓兄\我爸是村长\caocao\trunk\document\role\action\01jianggan\NewAnimation\Json</JsonFolder>
+  <JsonList />
+  <CanvasSize>
+    <Width>0</Width>
+    <Height>0</Height>
+  </CanvasSize>
+  <filePath>E:\ll\卓兄\我爸是村长\caocao\trunk\document\role\action\01jianggan\NewAnimation\NewAnimation.xml.animation</filePath>
+  <ProjectType>AnimationProject</ProjectType>
+  <ResRelativePath />
+  <ResourceFileList />
+  <bBatchImage>false</bBatchImage>
+</AnimationProject>
