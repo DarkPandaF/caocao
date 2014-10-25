@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<AnimationProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectDir>C:\Users\cl\Desktop\caocao</ProjectDir>
+  <Version>1.3.0.1</Version>
+  <Resources>C:\Users\cl\Desktop\caocao\Resources</Resources>
+  <Name>caocao</Name>
+  <JsonFileName>caocao.json</JsonFileName>
+  <JsonFolder>C:\Users\cl\Desktop\caocao\Json</JsonFolder>
+  <JsonList />
+  <CanvasSize>
+    <Width>0</Width>
+    <Height>0</Height>
+  </CanvasSize>
+  <filePath>C:\Users\cl\Desktop\caocao\caocao.xml.animation</filePath>
+  <ProjectType>AnimationProject</ProjectType>
+  <ResRelativePath />
+  <ResourceFileList />
+  <bBatchImage>false</bBatchImage>
+</AnimationProject>
