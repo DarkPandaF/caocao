@@ -3,11 +3,19 @@ BattleScene = class("BattleScene", function ()
 	return CCScene:create()
 end)
 
+local PLAYERSTATE = {
+    ONSTOP = 0,
+    MOVERIGHT = 1,
+    MOVELEFT  = 2
+}
+
 function BattleScene:ctor()
    self:loadArmature()
    self:initBg()
    self:initPlayer()
    self:initBtn()
+   self:scheduleUpdateWithPriorityLua(handler(self, self.update),10)
+   self.state = PLAYERSTATE.ONSTOP
 end
 
 function BattleScene:loadArmature()
@@ -30,7 +38,7 @@ function BattleScene:initBg()
    
     layer1:ignoreAnchorPointForPosition(false)
     layer1:setAnchorPoint(ccp(0, 1))
-    layer1:setPosition(0,WINSIZE.height)
+    layer1:setPosition(-1000,WINSIZE.height)
     self:addChild(layer1)
     self.layer1 = layer1
 
@@ -45,7 +53,7 @@ function BattleScene:initBg()
     
     layer2:ignoreAnchorPointForPosition(false)
     layer2:setAnchorPoint(ccp(0, 1))
-    layer2:setPosition(0,WINSIZE.height)
+    layer2:setPosition(-1000,WINSIZE.height)
     self:addChild(layer2)
     self.layer2 = layer2
     
@@ -61,6 +69,7 @@ function BattleScene:initBg()
     layer3:setAnchorPoint(ccp(0, 1))
     layer3:setPosition(0,WINSIZE.height-257)
     self:addChild(layer3)
+
     self.layer3 = layer3
 end
 
@@ -72,19 +81,24 @@ function BattleScene:initPlayer()
     self.layer3:addChild(armor)
 
     self.player = armor
+
+    self:setViewpointCenter(self.player:getPosition())
 end
 
-function BattleScene:onLeft() 
+function BattleScene:onLeft()
+   self.state = PLAYERSTATE.MOVELEFT 
    self.player:setScaleX(-0.5)
    self.player:getAnimation():play("walk",-1,-1,1)
 end
 
 function BattleScene:onRight()
+   self.state = PLAYERSTATE.MOVERIGHT
    self.player:setScale(0.5)
    self.player:getAnimation():play("walk",-1,-1,1)
 end
 
 function BattleScene:onStop()
+   self.state = PLAYERSTATE.ONSTOP
    self.player:setScale(0.5)
    self.player:getAnimation():play("idle",-1,-1,1)
 end 
@@ -100,5 +114,52 @@ function BattleScene:initBtn()
    btnright:setAnchorPoint(ccp(0.5,0.5))
    btnright:setPosition(400,50)
    self:addChild(btnright)
+
+end
+
+function BattleScene:setViewpointCenter(x,y)
+         
+    local pos1 = ccp(self.layer1:getPosition())
+    local pos2 = ccp(self.layer2:getPosition())
+    local pos3 = ccp(self.layer3:getPosition())
+
+
+    local lx = math.max(x, WINSIZE.width / 2)
+    local ly = math.max(y, WINSIZE.height / 2)
+    lx = math.min(lx, 2000/ 2)
+    ly = math.min(ly, 640/ 2 )
+    local actual = ccp(lx, ly)
+    local center = ccp(WINSIZE.width / 2 , WINSIZE.height / 2)
+    local viewPoint = ccpSub(center,actual)
+
+    self.layer3:setPosition(ccp(viewPoint.x, pos3.y))
+    local possub = ccpSub(pos3, ccp(self.layer3:getPosition()))
+    
+    if possub.x ~= 0 then
+        self.layer2:setPosition(ccpAdd(ccp(possub.x/2, 0), pos2))
+        self.layer1:setPosition(ccpAdd(ccp(possub.x/3, 0), pos1))       
+    end 
+
+end
+
+function BattleScene:update(dt)
+    
+    if self.state  == PLAYERSTATE.ONSTOP then
+       return
+    end
+    
+    local pos = ccp(self.player:getPosition())
+
+    if self.state ==  PLAYERSTATE.MOVERIGHT then
+       local despos  = ccpAdd(pos, ccp(1, 0))
+       self.player:setPosition(despos)
+       self:setViewpointCenter(self.player:getPosition())
+    end
+    
+     if self.state ==  PLAYERSTATE.MOVELEFT then
+       local despos  = ccpAdd(pos, ccp(-1, 0))
+       self.player:setPosition(despos)
+       self:setViewpointCenter(self.player:getPosition())
+    end
 
 end
