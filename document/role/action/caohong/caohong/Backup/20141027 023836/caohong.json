@@ -1,0 +1,1001 @@
+{
+  "content_scale": 1.0,
+  "armature_data": [
+    {
+      "strVersion": "1.3.0.1",
+      "version": 1.301,
+      "name": "caohong",
+      "bone_data": [
+        {
+          "name": "Layer47",
+          "parent": "",
+          "x": -533.5,
+          "y": 149.67333984375,
+          "z": 17,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 1.19029,
+          "kY": -1.19029,
+          "arrow_x": 64.621986389160156,
+          "arrow_y": -1.2055490515194833E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/6.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 35.467804,
+                  "y": 5.19949341,
+                  "cX": 1.00000012,
+                  "cY": 1.00000012,
+                  "kX": -1.19029033,
+                  "kY": 1.19028938
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer35",
+          "parent": "",
+          "x": 85.5,
+          "y": -188.32666015625,
+          "z": 15,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.1882215,
+          "kY": -0.1882215,
+          "arrow_x": 64.132728576660156,
+          "arrow_y": 2.4587963707745075E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/ 19.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 31.3880539,
+                  "y": 0.8887787,
+                  "cX": 1.00000012,
+                  "cY": 1.00000012,
+                  "kX": -0.18822217,
+                  "kY": 0.1882216
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer33",
+          "parent": "",
+          "x": 119.5,
+          "y": -141.32666015625,
+          "z": 14,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 2.001935,
+          "kY": -2.001935,
+          "arrow_x": 55.036357879638672,
+          "arrow_y": 1.7707163351587951E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/ 18.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 5.37826538,
+                  "y": 0.2725525,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 4.28125048,
+                  "kY": 2.00193477
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer23",
+          "parent": "",
+          "x": -255.5,
+          "y": -55.32666015625,
+          "z": 13,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 1.20825207,
+          "kY": -1.20825207,
+          "arrow_x": 62.032245635986328,
+          "arrow_y": 1.985715061891824E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/ 17.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 36.6583557,
+                  "y": 6.41601563,
+                  "cX": 1.00000012,
+                  "cY": 1.00000012,
+                  "kX": -1.20825207,
+                  "kY": 1.20825386
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer29",
+          "parent": "",
+          "x": -265.5,
+          "y": -215.32666015625,
+          "z": 12,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.308930755,
+          "kY": -0.308930755,
+          "arrow_x": 49.335601806640625,
+          "arrow_y": -7.9157471191138029E-06,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/ 16.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 20.6139221,
+                  "y": 4.47952271,
+                  "cX": 1.00000012,
+                  "cY": 1.00000012,
+                  "kX": -0.30893147,
+                  "kY": 0.308930874
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer27",
+          "parent": "",
+          "x": -230.5,
+          "y": -145.32666015625,
+          "z": 11,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 1.91840315,
+          "kY": -1.91840315,
+          "arrow_x": 73.389419555664062,
+          "arrow_y": 5.4163974709808826E-06,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/ 15.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 21.9650269,
+                  "y": 6.89472961,
+                  "cX": 1.00000012,
+                  "cY": 1.00000012,
+                  "kX": 4.36478233,
+                  "kY": 1.918403
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer22",
+          "parent": "",
+          "x": -156.5,
+          "y": 8.67333984375,
+          "z": 9,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/ 13.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 21.0,
+                  "y": -5.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer31",
+          "parent": "",
+          "x": 96.5,
+          "y": -94.32666015625,
+          "z": 8,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 1.092444,
+          "kY": -1.092444,
+          "arrow_x": 60.827617645263672,
+          "arrow_y": -3.6484561860561371E-07,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/ 11.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 33.5702667,
+                  "y": 1.74263,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": -1.09244478,
+                  "kY": 1.09244514
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "身体",
+          "parent": "",
+          "x": -195.5,
+          "y": 69.67333984375,
+          "z": 5,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": -1.51821327,
+          "kY": 1.51821327,
+          "arrow_x": 133.18409729003906,
+          "arrow_y": 2.25578696699813E-06,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/ 8.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 66.7497253,
+                  "y": -12.5090179,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 1.51821327,
+                  "kY": -1.51821327
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "头",
+          "parent": "身体",
+          "x": 176.75535583496094,
+          "y": -47.775955200195312,
+          "z": 2,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": -0.04237938,
+          "kY": 0.04237938,
+          "arrow_x": 98.0051040649414,
+          "arrow_y": 2.0599440176738426E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/ 4.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 56.1399231,
+                  "y": -13.4278793,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 1.56059277,
+                  "kY": -1.56059182
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "大臂2",
+          "parent": "身体",
+          "x": 183.85076904296875,
+          "y": -544.08905029296875,
+          "z": 1,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 3.1270864,
+          "kY": -3.1270864,
+          "arrow_x": 105.07615661621094,
+          "arrow_y": -1.787473593140021E-06,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/ 3.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 55.88327,
+                  "y": 4.13031,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 4.674312,
+                  "kY": 1.60887241
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "小臂2",
+          "parent": "大臂2",
+          "x": 89.65875244140625,
+          "y": -15.598262786865234,
+          "z": 6,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": -0.722898066,
+          "kY": 0.722898066,
+          "arrow_x": 77.466133117675781,
+          "arrow_y": 4.835225990973413E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/ 9.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 36.86772,
+                  "y": 0.8778076,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": -0.885975242,
+                  "kY": 0.8859755
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "拳头2",
+          "parent": "小臂2",
+          "x": 56.850666046142578,
+          "y": 0.051614448428153992,
+          "z": 7,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.03582573,
+          "kY": -0.03582573,
+          "arrow_x": 36.4005241394043,
+          "arrow_y": -4.5210414100438356E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/ 10.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 18.5986328,
+                  "y": -0.302215576,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": -0.9218012,
+                  "kY": 0.921800137
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "武器2",
+          "parent": "拳头2",
+          "x": 30.439105987548828,
+          "y": 7.0328445434570312,
+          "z": 16,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": -1.33162832,
+          "kY": 1.33162832,
+          "arrow_x": 133.0150146484375,
+          "arrow_y": -2.5374756660312414E-06,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/ 20.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 73.487915,
+                  "y": -9.02906,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.409829021,
+                  "kY": -0.409826875
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer49",
+          "parent": "",
+          "x": -495.5,
+          "y": 33.67333984375,
+          "z": 4,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 1.15973175,
+          "kY": -1.15973175,
+          "arrow_x": 42.544105529785156,
+          "arrow_y": -1.3596581993624568E-06,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/ 7.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 22.3297729,
+                  "y": 1.17523193,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": -1.159732,
+                  "kY": 1.15973151
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer51",
+          "parent": "Layer49",
+          "x": 20.543394088745117,
+          "y": -32.954059600830078,
+          "z": 10,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": -1.566221,
+          "kY": 1.566221,
+          "arrow_x": 164.39585876464844,
+          "arrow_y": -2.5305373128503561E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/ 14.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 91.38913,
+                  "y": -0.145980835,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.406488061,
+                  "kY": -0.406487823
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer45",
+          "parent": "",
+          "x": -467.5,
+          "y": 244.67333984375,
+          "z": 3,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 2.132171,
+          "kY": -2.132171,
+          "arrow_x": 114.58616638183594,
+          "arrow_y": 3.7236895877867937E-06,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "caohong.psd_Psd.Dir/ 5.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 52.56306,
+                  "y": 4.70391846,
+                  "cX": 1.00000012,
+                  "cY": 1.00000012,
+                  "kX": 4.151014,
+                  "kY": 2.13216949
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "animation_data": [
+    {
+      "name": "caohong",
+      "mov_data": [
+        {
+          "name": "Animation2",
+          "dr": 0,
+          "lp": true,
+          "to": 0,
+          "drTW": 0,
+          "twE": 0,
+          "sc": 1.0,
+          "mov_bone_data": [
+            {
+              "name": "Layer47",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "武器2",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer35",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer33",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer23",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer29",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer27",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer51",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer22",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer31",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "拳头2",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "小臂2",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "身体",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer49",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer45",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "头",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "大臂2",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "texture_data": [
+    {
+      "name": "caohong.psd_Psd.Dir/ 3",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "caohong.psd_Psd.Dir/ 4",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "caohong.psd_Psd.Dir/ 5",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "caohong.psd_Psd.Dir/ 7",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "caohong.psd_Psd.Dir/ 8",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "caohong.psd_Psd.Dir/ 9",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "caohong.psd_Psd.Dir/ 10",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "caohong.psd_Psd.Dir/ 11",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "caohong.psd_Psd.Dir/ 13",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "caohong.psd_Psd.Dir/ 14",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "caohong.psd_Psd.Dir/ 15",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "caohong.psd_Psd.Dir/ 16",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "caohong.psd_Psd.Dir/ 17",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "caohong.psd_Psd.Dir/ 18",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "caohong.psd_Psd.Dir/ 19",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "caohong.psd_Psd.Dir/ 20",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "caohong.psd_Psd.Dir/6",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    }
+  ]
+}
