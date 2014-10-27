@@ -38,7 +38,7 @@ function BattleScene:initBg()
    
     layer1:ignoreAnchorPointForPosition(false)
     layer1:setAnchorPoint(ccp(0, 1))
-    layer1:setPosition(-1000,WINSIZE.height)
+    layer1:setPosition(0,WINSIZE.height)
     self:addChild(layer1)
     self.layer1 = layer1
 
@@ -53,7 +53,7 @@ function BattleScene:initBg()
     
     layer2:ignoreAnchorPointForPosition(false)
     layer2:setAnchorPoint(ccp(0, 1))
-    layer2:setPosition(-1000,WINSIZE.height)
+    layer2:setPosition(0,WINSIZE.height)
     self:addChild(layer2)
     self.layer2 = layer2
     
@@ -136,8 +136,8 @@ function BattleScene:setViewpointCenter(x,y)
     local possub = ccpSub(pos3, ccp(self.layer3:getPosition()))
     
     if possub.x ~= 0 then
-        self.layer2:setPosition(ccpAdd(ccp(possub.x/2, 0), pos2))
-        self.layer1:setPosition(ccpAdd(ccp(possub.x/3, 0), pos1))       
+        self.layer2:setPosition(ccpSub(pos2,ccp(possub.x/2, 0)))
+        self.layer1:setPosition(ccpSub(pos1,ccp(possub.x/3, 0)))       
     end 
 
 end
