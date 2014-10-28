@@ -151,7 +151,7 @@ function BattleScene:update(dt)
     local pos = ccp(self.player:getPosition())
 
     if self.state ==  PLAYERSTATE.MOVERIGHT then
-       local despos  = ccpAdd(pos, ccp(1, 0))
+       local despos  = ccpAdd(pos, ccp(2, 0))
        self.player:setPosition(despos)
        self:setViewpointCenter(self.player:getPosition())
     end
