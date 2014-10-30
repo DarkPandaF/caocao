@@ -3,19 +3,12 @@ BattleScene = class("BattleScene", function ()
 	return CCScene:create()
 end)
 
-local PLAYERSTATE = {
-    ONSTOP = 0,
-    MOVERIGHT = 1,
-    MOVELEFT  = 2
-}
 
 function BattleScene:ctor()
    self:loadArmature()
    self:initBg()
    self:initPlayer()
    self:initBtn()
-   self:scheduleUpdateWithPriorityLua(handler(self, self.update),10)
-   self.state = PLAYERSTATE.ONSTOP
 end
 
 function BattleScene:loadArmature()
@@ -74,33 +67,40 @@ function BattleScene:initBg()
 end
 
 function BattleScene:initPlayer()
-    local armor = CCArmature:create("caocao")
-    armor:getAnimation():play("idle",-1,-1,1)
-    armor:setPosition(100,10)
+    
+
+    local armor = Player:create(self)
     armor:setScale(0.5)
-    self.layer3:addChild(armor)
-
+    armor:setPosition(armor:getContentSize().width / 2 * armor:getScaleX() ,20)
+    self.layer3:addChild(armor) 
+    
     self.player = armor
-
     self:setViewpointCenter(self.player:getPosition())
+
+    self.player.fsm:doEvent("init")
+end
+
+function BattleScene:getCanMovepos(x)
+   local pos = ccp(self.player:getPosition())
+   local result = ccpAdd(pos, ccp(x, 0))
+   local width =  self.player:getContentSize().width / 2 * self.player:getScaleX()
+   if result.x >= width  and  result.x <= 2000 - width  then
+   else 
+      result = pos
+   end
+   return result   
 end
 
 function BattleScene:onLeft()
-   self.state = PLAYERSTATE.MOVELEFT 
-   self.player:setScaleX(-0.5)
-   self.player:getAnimation():play("walk",-1,-1,1)
+    self.player.fsm:doEvent("walkleft")
 end
 
 function BattleScene:onRight()
-   self.state = PLAYERSTATE.MOVERIGHT
-   self.player:setScale(0.5)
-   self.player:getAnimation():play("walk",-1,-1,1)
+    self.player.fsm:doEvent("walkright")
 end
 
 function BattleScene:onStop()
-   self.state = PLAYERSTATE.ONSTOP
-   self.player:setScale(0.5)
-   self.player:getAnimation():play("idle",-1,-1,1)
+   self.player.fsm:doEvent("stop")
 end 
 
 function BattleScene:initBtn()
@@ -139,27 +139,5 @@ function BattleScene:setViewpointCenter(x,y)
         self.layer2:setPosition(ccpSub(pos2,ccp(possub.x/2, 0)))
         self.layer1:setPosition(ccpSub(pos1,ccp(possub.x/3, 0)))       
     end 
-
-end
-
-function BattleScene:update(dt)
-    
-    if self.state  == PLAYERSTATE.ONSTOP then
-       return
-    end
-    
-    local pos = ccp(self.player:getPosition())
-
-    if self.state ==  PLAYERSTATE.MOVERIGHT then
-       local despos  = ccpAdd(pos, ccp(2, 0))
-       self.player:setPosition(despos)
-       self:setViewpointCenter(self.player:getPosition())
-    end
-    
-     if self.state ==  PLAYERSTATE.MOVELEFT then
-       local despos  = ccpAdd(pos, ccp(-2, 0))
-       self.player:setPosition(despos)
-       self:setViewpointCenter(self.player:getPosition())
-    end
 
 end
