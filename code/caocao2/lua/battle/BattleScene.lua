@@ -91,6 +91,32 @@ function BattleScene:getCanMovepos(x)
    return result   
 end
 
+function BattleScene:setViewpointCenter(x,y)
+         
+    local pos1 = ccp(self.layer1:getPosition())
+    local pos2 = ccp(self.layer2:getPosition())
+    local pos3 = ccp(self.layer3:getPosition())
+
+
+    local lx = math.max(x, WINSIZE.width / 2)
+    local ly = math.max(y, WINSIZE.height / 2)
+    lx = math.min(lx, 2000 - WINSIZE.width / 2)
+    ly = math.min(ly, 217 - 0)
+    local actual = ccp(lx, ly)
+    local center = ccp(WINSIZE.width / 2 , WINSIZE.height / 2)
+    local viewPoint = ccpSub(center,actual)
+
+    self.layer3:setPosition(ccp(viewPoint.x, pos3.y))
+    local possub = ccpSub(pos3, ccp(self.layer3:getPosition()))
+    
+    if possub.x ~= 0 then
+        self.layer2:setPosition(ccpSub(pos2,ccp(possub.x/2, 0)))
+        self.layer1:setPosition(ccpSub(pos1,ccp(possub.x/3, 0)))       
+    end 
+
+end
+
+
 function BattleScene:onLeft()
     self.player.fsm:doEvent("walkleft")
 end
@@ -114,30 +140,5 @@ function BattleScene:initBtn()
    btnright:setAnchorPoint(ccp(0.5,0.5))
    btnright:setPosition(400,50)
    self:addChild(btnright)
-
-end
-
-function BattleScene:setViewpointCenter(x,y)
-         
-    local pos1 = ccp(self.layer1:getPosition())
-    local pos2 = ccp(self.layer2:getPosition())
-    local pos3 = ccp(self.layer3:getPosition())
-
-
-    local lx = math.max(x, WINSIZE.width / 2)
-    local ly = math.max(y, WINSIZE.height / 2)
-    lx = math.min(lx, 2000/ 2)
-    ly = math.min(ly, 640/ 2 )
-    local actual = ccp(lx, ly)
-    local center = ccp(WINSIZE.width / 2 , WINSIZE.height / 2)
-    local viewPoint = ccpSub(center,actual)
-
-    self.layer3:setPosition(ccp(viewPoint.x, pos3.y))
-    local possub = ccpSub(pos3, ccp(self.layer3:getPosition()))
-    
-    if possub.x ~= 0 then
-        self.layer2:setPosition(ccpSub(pos2,ccp(possub.x/2, 0)))
-        self.layer1:setPosition(ccpSub(pos1,ccp(possub.x/3, 0)))       
-    end 
 
 end
