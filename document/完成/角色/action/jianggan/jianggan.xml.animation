@@ -14,6 +14,8 @@
   <filePath>E:\caocao\trunk\document\完成\角色\action\jianggan\jianggan.xml.animation</filePath>
   <ProjectType>AnimationProject</ProjectType>
   <ResRelativePath />
-  <ResourceFileList />
-  <bBatchImage>false</bBatchImage>
+  <ResourceFileList>
+    <string>jianggan0.plist</string>
+  </ResourceFileList>
+  <bBatchImage>true</bBatchImage>
 </AnimationProject>

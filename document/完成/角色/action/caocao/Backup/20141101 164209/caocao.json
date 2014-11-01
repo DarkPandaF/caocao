@@ -1,5 +1,5 @@
 {
-  "content_scale": 0.45,
+  "content_scale": 1.0,
   "armature_data": [
     {
       "strVersion": "1.3.0.1",
@@ -5930,26 +5930,6 @@
           "sc": 0.416666657,
           "mov_bone_data": [
             {
-              "name": "左手事件点",
-              "dl": 0.0,
-              "frame_data": [
-                {
-                  "dI": -1,
-                  "x": 265.71426391601562,
-                  "y": -171.42855834960938,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 10,
-                  "twE": 0,
-                  "tweenFrame": true,
-                  "evt": "attack"
-                }
-              ]
-            },
-            {
               "name": "刀光2",
               "dl": 0.0,
               "frame_data": [
@@ -7587,33 +7567,13 @@
         },
         {
           "name": "shoot_rifle",
-          "dr": 21,
+          "dr": 20,
           "lp": false,
           "to": 0,
           "drTW": 0,
           "twE": 0,
           "sc": 0.416666657,
           "mov_bone_data": [
-            {
-              "name": "右手事件点",
-              "dl": 0.0,
-              "frame_data": [
-                {
-                  "dI": -1,
-                  "x": 190.71427917480469,
-                  "y": 105.71426391601563,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 9,
-                  "twE": 0,
-                  "tweenFrame": true,
-                  "evt": "attack"
-                }
-              ]
-            },
             {
               "name": "武器",
               "dl": 0.0,
@@ -9673,33 +9633,13 @@
         },
         {
           "name": "shoot_rocket",
-          "dr": 21,
+          "dr": 20,
           "lp": false,
           "to": 0,
           "drTW": 0,
           "twE": 0,
           "sc": 0.416666657,
           "mov_bone_data": [
-            {
-              "name": "右手事件点",
-              "dl": 0.0,
-              "frame_data": [
-                {
-                  "dI": -1,
-                  "x": 188.57144165039063,
-                  "y": 102.85714721679688,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 9,
-                  "twE": 0,
-                  "tweenFrame": true,
-                  "evt": "attack"
-                }
-              ]
-            },
             {
               "name": "武器",
               "dl": 0.0,
@@ -11739,7 +11679,7 @@
         },
         {
           "name": "shoot_fire_ready",
-          "dr": 4,
+          "dr": 3,
           "lp": false,
           "to": 0,
           "drTW": 0,
@@ -12564,8 +12504,8 @@
           ]
         },
         {
-          "name": "shoot_fire_shooting",
-          "dr": 6,
+          "name": "shoot_fire_ready_shooting",
+          "dr": 5,
           "lp": true,
           "to": 0,
           "drTW": 0,
@@ -13517,8 +13457,8 @@
           ]
         },
         {
-          "name": "shoot_fire_over",
-          "dr": 6,
+          "name": "shoot_fire_ready_over",
+          "dr": 5,
           "lp": false,
           "to": 0,
           "drTW": 0,

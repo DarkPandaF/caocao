@@ -14,6 +14,8 @@
   <filePath>E:\caocao\trunk\document\完成\角色\action\huangjin01\huangjin01.xml.animation</filePath>
   <ProjectType>AnimationProject</ProjectType>
   <ResRelativePath />
-  <ResourceFileList />
-  <bBatchImage>false</bBatchImage>
+  <ResourceFileList>
+    <string>huangjin010.plist</string>
+  </ResourceFileList>
+  <bBatchImage>true</bBatchImage>
 </AnimationProject>
