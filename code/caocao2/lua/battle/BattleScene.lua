@@ -7,6 +7,7 @@ end)
 function BattleScene:ctor()
    self:loadArmature()
    self:initBg()
+   self:initButtonLayer()
    self:initPlayer()
    self:initBtn()
 end
@@ -59,8 +60,8 @@ function BattleScene:initBg()
         layer3:addChild(sp)
     end
     layer3:ignoreAnchorPointForPosition(false)
-    layer3:setAnchorPoint(ccp(0, 1))
-    layer3:setPosition(0,WINSIZE.height-257)
+    layer3:setAnchorPoint(ccp(0, 0))
+    layer3:setPosition(0,216)
     self:addChild(layer3)
 
     self.layer3 = layer3
@@ -140,5 +141,13 @@ function BattleScene:initBtn()
    btnright:setAnchorPoint(ccp(0.5,0.5))
    btnright:setPosition(400,50)
    self:addChild(btnright)
+
+end
+
+function BattleScene:initButtonLayer()
+   
+   local btnlayer = CCSprite:create(P("battle/buttonlayer.png"))
+   btnlayer:setAnchorPoint(ccp(0, 0))
+   self:addChild(btnlayer)
 
 end
