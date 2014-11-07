@@ -9,7 +9,6 @@ function BattleScene:ctor()
    self:initBg()
    self:initButtonLayer()
    self:initPlayer()
-   self:initBtn()
 end
 
 function BattleScene:loadArmature()
@@ -114,7 +113,6 @@ function BattleScene:setViewpointCenter(x,y)
         self.layer2:setPosition(ccpSub(pos2,ccp(possub.x/2, 0)))
         self.layer1:setPosition(ccpSub(pos1,ccp(possub.x/3, 0)))       
     end 
-
 end
 
 
@@ -132,15 +130,7 @@ end
 
 function BattleScene:initBtn()
    
-   local btnleft = UITouchButton.new(P("button/button_blue_nor.png"),P("button/button_blue_sel.png"),handler(self, self.onLeft),handler(self, self.onStop)) 
-   btnleft:setAnchorPoint(ccp(0.5, 0.5))
-   btnleft:setPosition(200,50)
-   self:addChild(btnleft)
-   
-   local btnright = UITouchButton.new(P("button/button_red_nor.png"),P("button/button_red_sel.png"),handler(self, self.onRight),handler(self, self.onStop)) 
-   btnright:setAnchorPoint(ccp(0.5,0.5))
-   btnright:setPosition(400,50)
-   self:addChild(btnright)
+
 
 end
 
@@ -149,5 +139,15 @@ function BattleScene:initButtonLayer()
    local btnlayer = CCSprite:create(P("battle/buttonlayer.png"))
    btnlayer:setAnchorPoint(ccp(0, 0))
    self:addChild(btnlayer)
+
+   local btnleft = UITouchButton.new(P("button/leftnormal.png"),P("button/leftpress.png"),handler(self, self.onLeft),handler(self, self.onStop)) 
+   btnleft:setAnchorPoint(ccp(0, 0))
+   btnleft:setPosition(53,10)
+   self:addChild(btnleft)
+   
+   local btnright = UITouchButton.new(P("button/rightnormal.png"),P("button/rightpress.png"),handler(self, self.onRight),handler(self, self.onStop)) 
+   btnright:setAnchorPoint(ccp(0,0))
+   btnright:setPosition(269,10)
+   self:addChild(btnright)
 
 end
