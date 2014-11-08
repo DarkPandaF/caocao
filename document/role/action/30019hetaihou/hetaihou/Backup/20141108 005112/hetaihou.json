@@ -1,0 +1,16 @@
+{
+  "content_scale": 1.0,
+  "armature_data": [
+    {
+      "strVersion": "1.3.0.1",
+      "version": 1.301,
+      "name": "hetaihou"
+    }
+  ],
+  "animation_data": [
+    {
+      "name": "hetaihou"
+    }
+  ],
+  "texture_data": null
+}

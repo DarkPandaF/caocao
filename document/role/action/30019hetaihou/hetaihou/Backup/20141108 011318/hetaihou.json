@@ -1,0 +1,888 @@
+{
+  "content_scale": 1.0,
+  "armature_data": [
+    {
+      "strVersion": "1.3.0.1",
+      "version": 1.301,
+      "name": "hetaihou",
+      "bone_data": [
+        {
+          "name": "Layer39",
+          "parent": "",
+          "x": 28.125631332397461,
+          "y": 85.079414367675781,
+          "z": 15,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": -1.38381708,
+          "kY": 1.38381708,
+          "arrow_x": 32.744644165039062,
+          "arrow_y": 1.5792775229783729E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "何太后实际大小.psd_Psd.Dir/图层 37.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 18.5386276,
+                  "y": -3.94134331,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 1.3838172,
+                  "kY": -1.3838166
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer37",
+          "parent": "",
+          "x": 15.951716423034668,
+          "y": 113.77507019042969,
+          "z": 14,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 1.18087852,
+          "kY": -1.18087852,
+          "arrow_x": 34.314788818359375,
+          "arrow_y": -3.2620737329125404E-06,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "何太后实际大小.psd_Psd.Dir/图层 36.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 14.7678757,
+                  "y": 0.5902519,
+                  "cX": 1.00000012,
+                  "cY": 1.00000012,
+                  "kX": -1.18087828,
+                  "kY": 1.18087828
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer47",
+          "parent": "",
+          "x": 27.690849304199219,
+          "y": 57.688106536865234,
+          "z": 12,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 1.5957911,
+          "kY": -1.5957911,
+          "arrow_x": 34.793476104736328,
+          "arrow_y": -1.4351494428410661E-06,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "何太后实际大小.psd_Psd.Dir/图层 34.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 12.8863258,
+                  "y": 0.853708267,
+                  "cX": 0.9999999,
+                  "cY": 0.9999999,
+                  "kX": 4.687394,
+                  "kY": 1.59579086
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer49",
+          "parent": "",
+          "x": 24.647371292114258,
+          "y": 25.948970794677734,
+          "z": 11,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 1.53235376,
+          "kY": -1.53235376,
+          "arrow_x": 22.625417709350586,
+          "arrow_y": -2.0341973140602931E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "何太后实际大小.psd_Psd.Dir/图层 33.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 8.944956,
+                  "y": -0.102331161,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": -1.53235376,
+                  "kY": 1.53235376
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer51",
+          "parent": "",
+          "x": 30.299545288085938,
+          "y": -1.4423415660858154,
+          "z": 10,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 2.2917676,
+          "kY": -2.2917676,
+          "arrow_x": 19.100803375244141,
+          "arrow_y": -2.568335912656039E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "何太后实际大小.psd_Psd.Dir/图层 32.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 6.557684,
+                  "y": 0.7785835,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 3.991418,
+                  "kY": 2.29176784
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer43",
+          "parent": "",
+          "x": -31.439596176147461,
+          "y": 25.079404830932617,
+          "z": 9,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 1.056345,
+          "kY": -1.056345,
+          "arrow_x": 22.973642349243164,
+          "arrow_y": 1.6743579180911183E-06,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "何太后实际大小.psd_Psd.Dir/图层 30.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 12.07637,
+                  "y": 0.443652153,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": -1.05634487,
+                  "kY": 1.05634534
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer45",
+          "parent": "",
+          "x": -19.700464248657227,
+          "y": 4.209836483001709,
+          "z": 8,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 1.66355264,
+          "kY": -1.66355264,
+          "arrow_x": 18.7763729095459,
+          "arrow_y": -1.5034242096589878E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "何太后实际大小.psd_Psd.Dir/图层 29.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 6.55413342,
+                  "y": 1.31318474,
+                  "cX": 1.00000012,
+                  "cY": 1.00000012,
+                  "kX": 4.61963272,
+                  "kY": 1.66355252
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer41",
+          "parent": "",
+          "x": -11.004809379577637,
+          "y": 52.035930633544922,
+          "z": 7,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 2.32763076,
+          "kY": -2.32763076,
+          "arrow_x": 32.294143676757812,
+          "arrow_y": -1.6997713828459382E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "何太后实际大小.psd_Psd.Dir/图层 28.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 13.1400871,
+                  "y": -0.115543365,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 3.955555,
+                  "kY": 2.32763076
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer33",
+          "parent": "",
+          "x": -117.09178161621094,
+          "y": 90.296806335449219,
+          "z": 6,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": -1.0550022125244141E-05,
+          "arrow_y": 9.3048729468137026E-06,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "何太后实际大小.psd_Psd.Dir/图层 27.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 6.98067474,
+                  "y": 1.154335,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer31",
+          "parent": "",
+          "x": -59.26568603515625,
+          "y": 97.6881103515625,
+          "z": 5,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": -2.010639,
+          "kY": 2.010639,
+          "arrow_x": 24.506471633911133,
+          "arrow_y": 1.166854053735733E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "何太后实际大小.psd_Psd.Dir/图层 26.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 12.1329269,
+                  "y": 2.59269333,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 2.010639,
+                  "kY": -2.01063919
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer29",
+          "parent": "",
+          "x": -52.309165954589844,
+          "y": 82.905502319335938,
+          "z": 4,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": -2.02551556,
+          "kY": 2.02551556,
+          "arrow_x": 21.778236389160156,
+          "arrow_y": 1.8384474969934672E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "何太后实际大小.psd_Psd.Dir/图层 25.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 8.641724,
+                  "y": 0.7492027,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 2.02551579,
+                  "kY": -2.02551532
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer25",
+          "parent": "",
+          "x": -37.961334228515625,
+          "y": 112.47072601318359,
+          "z": 3,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 2.03444386,
+          "kY": -2.03444386,
+          "arrow_x": 33.054927825927734,
+          "arrow_y": -1.5262550732586533E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "何太后实际大小.psd_Psd.Dir/图层 24.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 16.7804718,
+                  "y": 1.01768494,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 4.24874163,
+                  "kY": 2.03444433
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer23",
+          "parent": "",
+          "x": 10.299541473388672,
+          "y": 76.383758544921875,
+          "z": 1,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": -1.59936,
+          "kY": 1.59936,
+          "arrow_x": 45.670810699462891,
+          "arrow_y": 3.4763820622174535E-06,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "何太后实际大小.psd_Psd.Dir/图层 31.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 23.5615616,
+                  "y": 5.2954464,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 1.59936,
+                  "kY": -1.59936082
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer17",
+          "parent": "Layer23",
+          "x": 48.663379669189453,
+          "y": -93.166954040527344,
+          "z": 13,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0477920771,
+          "kY": -0.0477920771,
+          "arrow_x": 45.225742340087891,
+          "arrow_y": 3.9946527977008373E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "何太后实际大小.psd_Psd.Dir/图层 35.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 16.53543,
+                  "y": -5.84256,
+                  "cX": 0.9999999,
+                  "cY": 0.9999999,
+                  "kX": 1.55156815,
+                  "kY": -1.5515672
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer18",
+          "parent": "Layer23",
+          "x": 49.619514465332031,
+          "y": 1.19205904006958,
+          "z": 2,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0285636187,
+          "kY": -0.0285636187,
+          "arrow_x": 43.913055419921875,
+          "arrow_y": -1.3910478628531564E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "何太后实际大小.psd_Psd.Dir/图层 16 副本.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 15.4506531,
+                  "y": -5.3563385,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 1.57079637,
+                  "kY": -1.57079637
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "animation_data": [
+    {
+      "name": "hetaihou",
+      "mov_data": [
+        {
+          "name": "Animation1",
+          "dr": 0,
+          "lp": true,
+          "to": 0,
+          "drTW": 0,
+          "twE": 0,
+          "sc": 1.0,
+          "mov_bone_data": [
+            {
+              "name": "Layer39",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer37",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer17",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer47",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer49",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer51",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer43",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer45",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer41",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer33",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer31",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer29",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer25",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer18",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer23",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "texture_data": [
+    {
+      "name": "何太后实际大小.psd_Psd.Dir/图层 16 副本",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "何太后实际大小.psd_Psd.Dir/图层 24",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "何太后实际大小.psd_Psd.Dir/图层 25",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "何太后实际大小.psd_Psd.Dir/图层 26",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "何太后实际大小.psd_Psd.Dir/图层 27",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "何太后实际大小.psd_Psd.Dir/图层 28",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "何太后实际大小.psd_Psd.Dir/图层 29",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "何太后实际大小.psd_Psd.Dir/图层 30",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "何太后实际大小.psd_Psd.Dir/图层 31",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "何太后实际大小.psd_Psd.Dir/图层 32",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "何太后实际大小.psd_Psd.Dir/图层 33",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "何太后实际大小.psd_Psd.Dir/图层 34",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "何太后实际大小.psd_Psd.Dir/图层 35",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "何太后实际大小.psd_Psd.Dir/图层 36",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "何太后实际大小.psd_Psd.Dir/图层 37",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    }
+  ],
+  "config_file_path": []
+}
