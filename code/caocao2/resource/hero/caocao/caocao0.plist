@@ -4,6 +4,44 @@
 	<dict>
 		<key>frames</key>
 		<dict>
+			<key>刀光1.psd_Psd.Dir/图层 2.png</key>
+			<dict>
+				<key>width</key>
+				<integer>81</integer>
+				<key>height</key>
+				<integer>289</integer>
+				<key>originalWidth</key>
+				<integer>81</integer>
+				<key>originalHeight</key>
+				<integer>289</integer>
+				<key>x</key>
+				<integer>0</integer>
+				<key>y</key>
+				<integer>0</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>0</real>
+			</dict>
+			<key>刀光1.psd_Psd.Dir/图层 1.png</key>
+			<dict>
+				<key>width</key>
+				<integer>88</integer>
+				<key>height</key>
+				<integer>299</integer>
+				<key>originalWidth</key>
+				<integer>88</integer>
+				<key>originalHeight</key>
+				<integer>299</integer>
+				<key>x</key>
+				<integer>83</integer>
+				<key>y</key>
+				<integer>0</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>0</real>
+			</dict>
 			<key>caocao.psd_Psd.Dir/ 19.png</key>
 			<dict>
 				<key>width</key>
@@ -15,7 +53,7 @@
 				<key>originalHeight</key>
 				<integer>46</integer>
 				<key>x</key>
-				<integer>0</integer>
+				<integer>173</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
@@ -34,7 +72,7 @@
 				<key>originalHeight</key>
 				<integer>70</integer>
 				<key>x</key>
-				<integer>150</integer>
+				<integer>323</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
@@ -53,7 +91,7 @@
 				<key>originalHeight</key>
 				<integer>66</integer>
 				<key>x</key>
-				<integer>225</integer>
+				<integer>398</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
@@ -72,7 +110,7 @@
 				<key>originalHeight</key>
 				<integer>73</integer>
 				<key>x</key>
-				<integer>327</integer>
+				<integer>500</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
@@ -91,7 +129,7 @@
 				<key>originalHeight</key>
 				<integer>64</integer>
 				<key>x</key>
-				<integer>411</integer>
+				<integer>584</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
@@ -110,7 +148,7 @@
 				<key>originalHeight</key>
 				<integer>54</integer>
 				<key>x</key>
-				<integer>490</integer>
+				<integer>663</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
@@ -129,7 +167,7 @@
 				<key>originalHeight</key>
 				<integer>72</integer>
 				<key>x</key>
-				<integer>546</integer>
+				<integer>719</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
@@ -148,7 +186,7 @@
 				<key>originalHeight</key>
 				<integer>83</integer>
 				<key>x</key>
-				<integer>612</integer>
+				<integer>785</integer>
 				<key>y</key>
 				<integer>0</integer>
 				<key>offsetX</key>
@@ -167,9 +205,9 @@
 				<key>originalHeight</key>
 				<integer>88</integer>
 				<key>x</key>
-				<integer>783</integer>
-				<key>y</key>
 				<integer>0</integer>
+				<key>y</key>
+				<integer>301</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -186,9 +224,9 @@
 				<key>originalHeight</key>
 				<integer>72</integer>
 				<key>x</key>
-				<integer>863</integer>
+				<integer>80</integer>
 				<key>y</key>
-				<integer>0</integer>
+				<integer>301</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -205,9 +243,9 @@
 				<key>originalHeight</key>
 				<integer>111</integer>
 				<key>x</key>
-				<integer>0</integer>
+				<integer>176</integer>
 				<key>y</key>
-				<integer>90</integer>
+				<integer>301</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -224,9 +262,28 @@
 				<key>originalHeight</key>
 				<integer>97</integer>
 				<key>x</key>
-				<integer>133</integer>
+				<integer>309</integer>
 				<key>y</key>
-				<integer>90</integer>
+				<integer>301</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>0</real>
+			</dict>
+			<key>caocao.psd_Psd.Dir/ 5 .png</key>
+			<dict>
+				<key>width</key>
+				<integer>115</integer>
+				<key>height</key>
+				<integer>131</integer>
+				<key>originalWidth</key>
+				<integer>115</integer>
+				<key>originalHeight</key>
+				<integer>131</integer>
+				<key>x</key>
+				<integer>413</integer>
+				<key>y</key>
+				<integer>301</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -243,9 +300,28 @@
 				<key>originalHeight</key>
 				<integer>131</integer>
 				<key>x</key>
-				<integer>237</integer>
+				<integer>530</integer>
 				<key>y</key>
-				<integer>90</integer>
+				<integer>301</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>0</real>
+			</dict>
+			<key>旗子.psd_Psd.Dir/图层 1.png</key>
+			<dict>
+				<key>width</key>
+				<integer>198</integer>
+				<key>height</key>
+				<integer>212</integer>
+				<key>originalWidth</key>
+				<integer>198</integer>
+				<key>originalHeight</key>
+				<integer>212</integer>
+				<key>x</key>
+				<integer>647</integer>
+				<key>y</key>
+				<integer>301</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -262,9 +338,9 @@
 				<key>originalHeight</key>
 				<integer>179</integer>
 				<key>x</key>
-				<integer>354</integer>
+				<integer>0</integer>
 				<key>y</key>
-				<integer>90</integer>
+				<integer>515</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -281,9 +357,9 @@
 				<key>originalHeight</key>
 				<integer>147</integer>
 				<key>x</key>
-				<integer>642</integer>
+				<integer>288</integer>
 				<key>y</key>
-				<integer>90</integer>
+				<integer>515</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -300,9 +376,9 @@
 				<key>originalHeight</key>
 				<integer>66</integer>
 				<key>x</key>
-				<integer>775</integer>
+				<integer>421</integer>
 				<key>y</key>
-				<integer>90</integer>
+				<integer>515</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -319,9 +395,9 @@
 				<key>originalHeight</key>
 				<integer>47</integer>
 				<key>x</key>
-				<integer>853</integer>
+				<integer>499</integer>
 				<key>y</key>
-				<integer>90</integer>
+				<integer>515</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -338,9 +414,9 @@
 				<key>originalHeight</key>
 				<integer>83</integer>
 				<key>x</key>
-				<integer>0</integer>
+				<integer>550</integer>
 				<key>y</key>
-				<integer>271</integer>
+				<integer>515</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -357,9 +433,9 @@
 				<key>originalHeight</key>
 				<integer>48</integer>
 				<key>x</key>
-				<integer>171</integer>
+				<integer>721</integer>
 				<key>y</key>
-				<integer>271</integer>
+				<integer>515</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -376,9 +452,9 @@
 				<key>originalHeight</key>
 				<integer>202</integer>
 				<key>x</key>
-				<integer>245</integer>
+				<integer>795</integer>
 				<key>y</key>
-				<integer>271</integer>
+				<integer>515</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -395,9 +471,9 @@
 				<key>originalHeight</key>
 				<integer>88</integer>
 				<key>x</key>
-				<integer>282</integer>
+				<integer>832</integer>
 				<key>y</key>
-				<integer>271</integer>
+				<integer>515</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -414,9 +490,9 @@
 				<key>originalHeight</key>
 				<integer>72</integer>
 				<key>x</key>
-				<integer>362</integer>
+				<integer>912</integer>
 				<key>y</key>
-				<integer>271</integer>
+				<integer>515</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -433,9 +509,9 @@
 				<key>originalHeight</key>
 				<integer>111</integer>
 				<key>x</key>
-				<integer>458</integer>
+				<integer>0</integer>
 				<key>y</key>
-				<integer>271</integer>
+				<integer>719</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -452,9 +528,9 @@
 				<key>originalHeight</key>
 				<integer>63</integer>
 				<key>x</key>
-				<integer>591</integer>
+				<integer>133</integer>
 				<key>y</key>
-				<integer>271</integer>
+				<integer>719</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -471,9 +547,9 @@
 				<key>originalHeight</key>
 				<integer>55</integer>
 				<key>x</key>
-				<integer>671</integer>
+				<integer>213</integer>
 				<key>y</key>
-				<integer>271</integer>
+				<integer>719</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -490,9 +566,28 @@
 				<key>originalHeight</key>
 				<integer>72</integer>
 				<key>x</key>
-				<integer>728</integer>
+				<integer>270</integer>
 				<key>y</key>
-				<integer>271</integer>
+				<integer>719</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>0</real>
+			</dict>
+			<key>投影02.psd_Psd.Dir/图层 1.png</key>
+			<dict>
+				<key>width</key>
+				<integer>150</integer>
+				<key>height</key>
+				<integer>44</integer>
+				<key>originalWidth</key>
+				<integer>150</integer>
+				<key>originalHeight</key>
+				<integer>44</integer>
+				<key>x</key>
+				<integer>336</integer>
+				<key>y</key>
+				<integer>719</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>

@@ -197,26 +197,41 @@ function BattleScene:initButtonLayer()
    self:addChild(btnright)
 end
 
+function BattleScene:getPlayerState()
+   return self.player.fsm
+end
+
 function BattleScene:onSummonSoldier()
     print("on summon")
 end
 
 function BattleScene:onLeft()
-    self.player.fsm:doEvent("walkleft")
+    if self:getPlayerState():canDoEvent("walkleft") then
+       self:getPlayerState():doEvent("walkleft")
+    end
 end
 
 function BattleScene:onRight()
-    self.player.fsm:doEvent("walkright")
+    if self:getPlayerState():canDoEvent("walkright") then
+       self:getPlayerState():doEvent("walkright")
+    end
 end
 
 function BattleScene:onStop()
-   self.player.fsm:doEvent("stop")
+   if self:getPlayerState():canDoEvent("stop") then
+      self:getPlayerState():doEvent("stop")
+   end
 end 
 
 function BattleScene:onLeftHandClick()
-  print("left hand")
+   if self:getPlayerState():canDoEvent("attack") then
+      self:getPlayerState():doEvent("attack")
+   end
 end
 
 function BattleScene:onGunClick()
-  print("gun")
+   if self:getPlayerState():canDoEvent("shoot") then
+      self:getPlayerState():doEvent("shoot")
+   end
 end
+

@@ -21,15 +21,18 @@ function Player:ctor()
     armor:setPosition(self:getContentSize().width/2,0)
     self:addChild(armor)
     self.body = armor
+
+    self.body:getAnimation():registerMovementHandler(handler(self, self.MovementEventCallFun))
+    self.body:getAnimation():regisetrFrameHandler(handler(self, self.FrameEventCallFun))
     
     self:ignoreAnchorPointForPosition(false)
     self:setAnchorPoint(ccp(0.5, 0))
     self:scheduleUpdateWithPriorityLua(handler(self, self.update),10)   
 end
 
+
+
 function Player:update(dt)
-    
-     
     
     if self.fsm:getState() == "walkingleft" then
         local pos = self.scene:getCanMovepos(-2)
@@ -47,6 +50,23 @@ function Player:update(dt)
 end
 
 
+function Player:FrameEventCallFun(bone,eventname,cid,oid)
+   print("hello:"..eventname)
+end
+
+function Player:MovementEventCallFun(armature,moveevnettype,movementid)
+   if moveevnettype == 1 or moveevnettype == 2 then
+       if movementid == "attack"  then
+          self.fsm:doEvent("stopattack")
+       end
+       
+       if movementid == "shoot_rifle"  then
+          self.fsm:doEvent("stopattack")
+       end
+
+   end
+end
+
 --初始化状态机
 function Player:initStateMachine()
     local fsm = StateMachine.new()
@@ -56,12 +76,17 @@ function Player:initStateMachine()
         {name = "walkleft",  from  = "idle",to = "walkingleft"},
         {name = "walkright",  from  ="idle",to = "walkingright"},
         {name = "stop",  from  = {"walkingleft","walkingright"},to = "idle"},
+        {name = "attack",from = "idle",to = "attacking"},
+        {name = "stopattack",from = {"attacking","shooting"},to = "idle"},
+        {name = "shoot",from="idle",to="shooting"},
         {name = "kill",  from  = "*",to = "dead"},
       },
       callbacks = {
          onidle      = handler(self,self.onIdle),
          onwalkingleft   = handler(self,self.onWalkingLeft),
          onwalkingright  = handler(self,self.onWalkingRight),
+         onattacking = handler(self, self.onAttacking),
+         onshooting = handler(self, self.onShooting),
          ondead = handler(self, self.onDead)
       }
     })
@@ -87,3 +112,12 @@ end
 function Player:onDead(event)
    self.body:getAnimation():play("dead",-1,-1,0)
 end
+
+function Player:onAttacking(event)
+   self.body:getAnimation():play("attack",-1,-1,0)
+end
+
+function Player:onShooting(event)
+   self.body:getAnimation():play("shoot_rifle",-1,-1,0)
+end
+
