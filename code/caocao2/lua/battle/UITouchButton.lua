@@ -9,7 +9,7 @@ function UITouchButton:ctor(pic1,pic2,funcpress,funcrelease)
 	self.picsel = pic2
 	self.funcpress = funcpress
 	self.funcrelease = funcrelease
-    local sp = CCSprite:create(self.picsel)
+    local sp = CCSprite:create(self.picunsel)
     sp:setAnchorPoint(ccp(0, 0))
     self:addChild(sp)
     self:setContentSize(sp:getContentSize())
@@ -72,9 +72,9 @@ function UITouchButton:setSelected(sel)
 	   self.isSel = sel
        local texture = nil
        if sel then
-          texture = CCTextureCache:sharedTextureCache():addImage(self.picunsel)
+          texture = CCTextureCache:sharedTextureCache():addImage(self.picsel)
        else
-       	  texture = CCTextureCache:sharedTextureCache():addImage(self.picsel)
+       	  texture = CCTextureCache:sharedTextureCache():addImage(self.picunsel)
        end
        self.sp:setTexture(texture)
 	end

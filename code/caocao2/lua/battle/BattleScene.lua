@@ -115,6 +115,71 @@ function BattleScene:setViewpointCenter(x,y)
     end 
 end
 
+--创建按钮层
+function BattleScene:initButtonLayer()
+   
+   local btnlayer = CCSprite:create(P("battle/buttonlayer.png"))
+   btnlayer:setAnchorPoint(ccp(0, 0))
+   self:addChild(btnlayer)
+   
+   
+   local soldier1 = SummonBtn:create(P("button/soldierbg.png"),P("button/soldierselect.png"),P("head/head001.png"),handler(self, self.onSummonSoldier))
+   soldier1:setAnchorPoint(ccp(0, 1))
+   soldier1:setPosition(18,btnlayer:getContentSize().height - 13)
+   btnlayer:addChild(soldier1)
+   
+   local tmpsoldier = soldier1
+   for i=1,4 do
+      local soldier =  SummonBtn:create(P("button/soldierbg.png"),P("button/soldierselect.png"))
+      soldier:setAnchorPoint(ccp(0, 1))
+      soldier:setPosition(tmpsoldier:boundingBox():getMaxX(),tmpsoldier:boundingBox():getMaxY())
+      btnlayer:addChild(soldier)
+      tmpsoldier = soldier
+   end
+
+
+   local weaponbg = CCSprite:create(P("battle/weaponbg.png"))
+   weaponbg:setAnchorPoint(ccp(1, 0))
+   weaponbg:setPosition(btnlayer:getContentSize().width - 18,8)
+   btnlayer:addChild(weaponbg)  
+  
+   
+   local hllbbg = CCSprite:create(P("button/hlbg.png"))
+   hllbbg:setAnchorPoint(ccp(0, 1))
+   hllbbg:setPosition(weaponbg:boundingBox():getMinX(),btnlayer:getContentSize().height - 6)
+   btnlayer:addChild(hllbbg)
+
+   local hlbar = CCSprite:create(P("button/barbg.png"))
+   hlbar:setAnchorPoint(ccp(1, 0.5))
+   hlbar:setPosition(weaponbg:boundingBox():getMaxX(),hllbbg:boundingBox():getMidY())
+   btnlayer:addChild(hlbar)
+
+
+   local dylbbg =  CCSprite:create(P("button/dybg.png"))
+   dylbbg:setAnchorPoint(ccp(0, 1))
+   dylbbg:setPosition(hllbbg:boundingBox():getMinX(),hllbbg:boundingBox():getMinY())
+   btnlayer:addChild(dylbbg)
+   
+   local dybar = CCSprite:create(P("button/barbg.png"))
+   dybar:setAnchorPoint(ccp(1, 0.5))
+   dybar:setPosition(weaponbg:boundingBox():getMaxX(),dylbbg:boundingBox():getMidY())
+   btnlayer:addChild(dybar)
+     
+
+   local btnleft = UITouchButton.new(P("button/leftnormal.png"),P("button/leftpress.png"),handler(self, self.onLeft),handler(self, self.onStop)) 
+   btnleft:setAnchorPoint(ccp(0.5, 0.5))
+   btnleft:setPosition(160,weaponbg:boundingBox():getMidY())
+   self:addChild(btnleft)
+   
+   local btnright = UITouchButton.new(P("button/rightnormal.png"),P("button/rightpress.png"),handler(self, self.onRight),handler(self, self.onStop)) 
+   btnright:setAnchorPoint(ccp(0.5, 0.5))
+   btnright:setPosition(500-160,weaponbg:boundingBox():getMidY())
+   self:addChild(btnright)
+end
+
+function BattleScene:onSummonSoldier()
+    print("on summon")
+end
 
 function BattleScene:onLeft()
     self.player.fsm:doEvent("walkleft")
@@ -127,27 +192,3 @@ end
 function BattleScene:onStop()
    self.player.fsm:doEvent("stop")
 end 
-
-function BattleScene:initBtn()
-   
-
-
-end
-
-function BattleScene:initButtonLayer()
-   
-   local btnlayer = CCSprite:create(P("battle/buttonlayer.png"))
-   btnlayer:setAnchorPoint(ccp(0, 0))
-   self:addChild(btnlayer)
-
-   local btnleft = UITouchButton.new(P("button/leftnormal.png"),P("button/leftpress.png"),handler(self, self.onLeft),handler(self, self.onStop)) 
-   btnleft:setAnchorPoint(ccp(0, 0))
-   btnleft:setPosition(53,10)
-   self:addChild(btnleft)
-   
-   local btnright = UITouchButton.new(P("button/rightnormal.png"),P("button/rightpress.png"),handler(self, self.onRight),handler(self, self.onStop)) 
-   btnright:setAnchorPoint(ccp(0,0))
-   btnright:setPosition(269,10)
-   self:addChild(btnright)
-
-end
