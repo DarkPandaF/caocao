@@ -30,8 +30,6 @@ function Player:ctor()
     self:scheduleUpdateWithPriorityLua(handler(self, self.update),10)   
 end
 
-
-
 function Player:update(dt)
     
     if self.fsm:getState() == "walkingleft" then

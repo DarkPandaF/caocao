@@ -14,6 +14,8 @@ end
 function BattleScene:loadArmature()
     local adm = CCArmatureDataManager:sharedArmatureDataManager()
     adm:addArmatureFileInfo(P("hero/caocao/caocao.ExportJson"))
+    adm:addArmatureFileInfo(P("hero/caochong/caochong.ExportJson"))
+
 end
 
 function BattleScene:initBg()
@@ -78,6 +80,7 @@ function BattleScene:initPlayer()
     self:setViewpointCenter(self.player:getPosition())
 
     self.player.fsm:doEvent("init")
+
 end
 
 function BattleScene:getCanMovepos(x)
@@ -202,7 +205,11 @@ function BattleScene:getPlayerState()
 end
 
 function BattleScene:onSummonSoldier()
-    print("on summon")
+
+    local soldier = Soldier:create("caochong")
+    soldier:setPosition(0,20)
+    soldier.fsm:doEvent("init")
+    self.layer3:addChild(soldier)
 end
 
 function BattleScene:onLeft()
