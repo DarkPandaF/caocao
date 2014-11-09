@@ -142,7 +142,27 @@ function BattleScene:initButtonLayer()
    weaponbg:setAnchorPoint(ccp(1, 0))
    weaponbg:setPosition(btnlayer:getContentSize().width - 18,8)
    btnlayer:addChild(weaponbg)  
-  
+
+   local leftweaponbg = CCSprite:create(P("button/leftweapenbg.png"))
+   leftweaponbg:setAnchorPoint(ccp(0, 1))
+   leftweaponbg:setPosition(20,weaponbg:getContentSize().height - 10)
+   weaponbg:addChild(leftweaponbg)
+   
+   local lefthandbtn = UITouchButton.new(P("head/normalattack.png"),P("head/normalattack.png"),function()end,handler(self, self.onLeftHandClick))
+   lefthandbtn:setAnchorPoint(ccp(0.5, 0.5))
+   lefthandbtn:setPosition(leftweaponbg:getContentSize().width/2,leftweaponbg:getContentSize().height/2)
+   leftweaponbg:addChild(lefthandbtn)
+   
+   local rweapon2 =  SummonBtn:create(P("button/rightweapenbg.png"),P("button/gunsel.png"))
+   rweapon2:setAnchorPoint(ccp(1, 1))
+   rweapon2:setPosition(weaponbg:getContentSize().width -15,leftweaponbg:boundingBox():getMaxY())
+   weaponbg:addChild(rweapon2)
+
+   local rweapon1 =  SummonBtn:create(P("button/rightweapenbg.png"),P("button/gunsel.png"),P("head/gunattack1.png"),handler(self, self.onGunClick))
+   rweapon1:setAnchorPoint(ccp(1, 1))
+   rweapon1:setPosition(rweapon2:boundingBox():getMinX() - 3,rweapon2:boundingBox():getMaxY())
+   weaponbg:addChild(rweapon1)
+
    
    local hllbbg = CCSprite:create(P("button/hlbg.png"))
    hllbbg:setAnchorPoint(ccp(0, 1))
@@ -192,3 +212,11 @@ end
 function BattleScene:onStop()
    self.player.fsm:doEvent("stop")
 end 
+
+function BattleScene:onLeftHandClick()
+  print("left hand")
+end
+
+function BattleScene:onGunClick()
+  print("gun")
+end
