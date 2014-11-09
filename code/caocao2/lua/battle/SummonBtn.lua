@@ -33,7 +33,7 @@ function SummonBtn:ctor(bgpic,selpic,headpic,func,cooltime)
     self.lock = not headpic
     self.func = func or function()end
    
-    self.cooltime = cooltime or 3
+    self.cooltime = cooltime or 0
 
     self:ignoreAnchorPointForPosition(false)
     self:setTouchEnabled(true)
@@ -99,7 +99,12 @@ function SummonBtn:setSelected(sel)
 end
 
 function SummonBtn:coolSummon()
-	self.isincool = true
+	 
+    if self.cooltime == 0 then
+       return 
+    end  
+
+    self.isincool = true
     self.cooltimer:setPercentage(0)
     
     local function actonend()

@@ -126,7 +126,7 @@ function BattleScene:initButtonLayer()
    self:addChild(btnlayer)
    
    
-   local soldier1 = SummonBtn:create(P("button/soldierbg.png"),P("button/soldierselect.png"),P("head/head001.png"),handler(self, self.onSummonSoldier))
+   local soldier1 = SummonBtn:create(P("button/soldierbg.png"),P("button/soldierselect.png"),P("head/head001.png"),handler(self, self.onSummonSoldier),3)
    soldier1:setAnchorPoint(ccp(0, 1))
    soldier1:setPosition(18,btnlayer:getContentSize().height - 13)
    btnlayer:addChild(soldier1)
@@ -145,20 +145,16 @@ function BattleScene:initButtonLayer()
    weaponbg:setAnchorPoint(ccp(1, 0))
    weaponbg:setPosition(btnlayer:getContentSize().width - 18,8)
    btnlayer:addChild(weaponbg)  
+   
+   local lweapon = SummonBtn:create(P("button/leftweapenbg.png"),P("button/soldierselect.png"),P("head/normalattack.png"),handler(self, self.onLeftHandClick))
+   lweapon:setAnchorPoint(ccp(0, 1))
+   lweapon:setPosition(20,weaponbg:getContentSize().height - 10)
+   weaponbg:addChild(lweapon)
 
-   local leftweaponbg = CCSprite:create(P("button/leftweapenbg.png"))
-   leftweaponbg:setAnchorPoint(ccp(0, 1))
-   leftweaponbg:setPosition(20,weaponbg:getContentSize().height - 10)
-   weaponbg:addChild(leftweaponbg)
-   
-   local lefthandbtn = UITouchButton.new(P("head/normalattack.png"),P("head/normalattack.png"),function()end,handler(self, self.onLeftHandClick))
-   lefthandbtn:setAnchorPoint(ccp(0.5, 0.5))
-   lefthandbtn:setPosition(leftweaponbg:getContentSize().width/2,leftweaponbg:getContentSize().height/2)
-   leftweaponbg:addChild(lefthandbtn)
-   
+      
    local rweapon2 =  SummonBtn:create(P("button/rightweapenbg.png"),P("button/gunsel.png"))
    rweapon2:setAnchorPoint(ccp(1, 1))
-   rweapon2:setPosition(weaponbg:getContentSize().width -15,leftweaponbg:boundingBox():getMaxY())
+   rweapon2:setPosition(weaponbg:getContentSize().width -15,lweapon:boundingBox():getMaxY())
    weaponbg:addChild(rweapon2)
 
    local rweapon1 =  SummonBtn:create(P("button/rightweapenbg.png"),P("button/gunsel.png"),P("head/gunattack1.png"),handler(self, self.onGunClick))
