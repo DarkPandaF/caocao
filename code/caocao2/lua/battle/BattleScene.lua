@@ -10,6 +10,11 @@ function BattleScene:ctor()
    self:initButtonLayer()
    self:initPlayer()
    self:initTimer()
+   
+   self.soldierpool = {}
+   self.enemypool   = {}
+   
+
 end
 
 function BattleScene:loadArmature()
@@ -69,13 +74,13 @@ function BattleScene:initBg()
     
     
     --画格子
-    local posy = 122/3
-    for i=1,2 do
+    local posy = 122/4
+    for i=1,3 do
         local line =  ScutCxControl.ScutLineNode:lineWithPoint(ccp(0, i * posy),ccp(2000, i*posy),1,ccc4(255,255,0,255))
         layer3:addChild(line)  
     end 
     
-    local vsize = 50
+    local vsize = 15
     local vcount = math.modf(2000/vsize)
 
     for i=1, vcount do
@@ -89,8 +94,6 @@ function BattleScene:initBg()
 end
 
 function BattleScene:initPlayer()
-    
-
     local armor = Player:create(self)
     armor:setScale(0.5)
     armor:setPosition(armor:getContentSize().width / 2 * armor:getScaleX() ,20)
@@ -100,7 +103,6 @@ function BattleScene:initPlayer()
     self:setViewpointCenter(self.player:getPosition())
 
     self.player.fsm:doEvent("init")
-
 end
 
 function BattleScene:getCanMovepos(x)
@@ -220,29 +222,66 @@ function BattleScene:getPlayerState()
    return self.player.fsm
 end
 
+
+function BattleScene:getSoldier()
+    
+    local result = nil 
+    for i,v in ipairs(self.soldierpool) do
+       if v and not v:getParent() then
+          print("getoldsoldier")
+          result = v
+          break
+       end
+    end 
+    if not result then
+       result = Soldier:create("caochong")
+       result:retain()
+       table.insert(self.soldierpool,result)
+    end
+    return result
+end
+
+function BattleScene:getEnemy()
+    local result = nil 
+    for i,v in ipairs(self.enemypool) do
+       if v and not v:getParent() then
+          print("getoldenemy")
+          result = v
+          break
+       end
+    end 
+    if not result then
+       result = Enemy:create("zhangrang",0)
+       result:retain()
+       table.insert(self.enemypool,result)
+    end
+    return result
+end
+
+
 --召唤士兵
 function BattleScene:onSummonSoldier()
 
-    local soldier = Soldier:create("caochong")
+    local soldier = self:getSoldier()
     soldier:setPosition(0,20)
-    soldier.fsm:doEvent("init")
+    soldier:initState()
     self.layer3:addChild(soldier)
 end
 
 --创建敌人
 function BattleScene:createEnemy()
 
-    self.enemyindex = self.enemyindex or 0
-    local enemy = Enemy:create("zhangrang",self.enemyindex)
+    self.enemyindex = self.enemyindex or 0 
+    local enemy =  self:getEnemy()
     enemy:setPosition(self.layer3:getContentSize().width,40)
-    enemy.fsm:doEvent("init")
+    enemy:initEnemyState(self.enemyindex)
     self.layer3:addChild(enemy)
-
-    self.enemyindex = (self.enemyindex + 1) % 9
+    self.enemyindex = (self.enemyindex + 1) % 10 
+   
 end
 
 function BattleScene:initTimer()
-   self.timerid =  CCDirector:sharedDirector():getScheduler():scheduleScriptFunc(handler(self, self.createEnemy),3,false)
+   self.timerid =  CCDirector:sharedDirector():getScheduler():scheduleScriptFunc(handler(self, self.createEnemy),5,false)
 end
 
 function BattleScene:onLeft()

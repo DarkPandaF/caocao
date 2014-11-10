@@ -11,6 +11,9 @@ function Soldier:update(dt)
         local x = self:getPositionX()
         x = x + 1
         self:setPositionX(x)
+        if x >= self:getParent():getContentSize().width then
+           self:finish()
+        end
     end
 
     if self.fsm:getState() == "idle" then
@@ -21,6 +24,13 @@ end
 function Soldier:ctor(name)
    self.name = name
 end
+
+function Soldier:finish()
+    self:unscheduleUpdate()
+    self.fsm:doEvent("reset")
+    self:removeFromParentAndCleanup(false)
+end
+
 
 function Soldier:initArmor()
     local armor = CCArmature:create(self.name)
@@ -40,8 +50,16 @@ end
 function Soldier:init()
    self:initArmor()
    self:initStateMachine()
-   self:scheduleUpdateWithPriorityLua(handler(self, self.update),10) 
 end
+
+--初始化状态
+function Soldier:initState()
+   
+   --TODO初始化hp等
+   self.fsm:doEvent("init")
+   self:scheduleUpdateWithPriorityLua(handler(self, self.update),10) 
+end 
+
 
 function Soldier:create(name)
 	local ref = Soldier.new(name)
@@ -68,7 +86,8 @@ function Soldier:initStateMachine()
         {name = "stop",  from = "walking",to = "idle"},  
         {name = "attack",from = "idle",to = "attacking"},
         {name = "stopattack",from = "attacking",to = "idle"},
-        {name = "kill",from = "*",to = "dead"}
+        {name = "kill",from = "*",to = "dead"},
+        {name = "reset",from = "*",to = "none"}
       },
       callbacks = {
          onidle = handler(self,self.onIdle),

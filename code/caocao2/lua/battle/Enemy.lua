@@ -34,6 +34,9 @@ function Enemy:update(dt)
         local x = self:getPositionX()
         x = x - 1
         self:setPositionX(x)
+        if x <= 0 then
+           self:finish()
+        end
     end
 
     if self.fsm:getState() == "idle" then
@@ -41,7 +44,13 @@ function Enemy:update(dt)
     end
 end
 
+function Enemy:initEnemyState(index)
+   self:initState()
+   self.cindex = index
+   self:changeDisPlay()
+end
+
 function Enemy:onDead(event)
-	self:changeDisPlay()
+	  self:changeDisPlay()
     self.body:getAnimation():play("dead",-1,-1,0)
 end
