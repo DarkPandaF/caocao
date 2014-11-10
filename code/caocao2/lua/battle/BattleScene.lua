@@ -66,6 +66,13 @@ function BattleScene:initBg()
     layer3:setAnchorPoint(ccp(0, 0))
     layer3:setPosition(0,216)
     self:addChild(layer3)
+    
+    local posy = 122/4
+    for i=1,3 do
+        local line =  ScutCxControl.ScutLineNode:lineWithPoint(ccp(0, i * posy),ccp(2000, i*posy),1,ccc4(255,255,0,255))
+        layer3:addChild(line)  
+    end 
+    
 
     self.layer3 = layer3
 end
