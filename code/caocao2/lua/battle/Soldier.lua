@@ -5,25 +5,6 @@ Soldier = class("Soldier", function()
     --return CCLayerColor:create(ccc4(255, 0, 0,175))
 	end)
 
-function Soldier:ctor(name)
-
-    local armor = CCArmature:create(name)
-    armor:getAnimation():play("idle",-1,-1,1)
-    self:setContentSize(armor:getContentSize())
-    armor:setPosition(self:getContentSize().width/2,0)
-    self:addChild(armor)
-    self.body = armor
-    
-    self.body:getAnimation():registerMovementHandler(handler(self, self.MovementEventCallFun))
-    self.body:getAnimation():regisetrFrameHandler(handler(self, self.FrameEventCallFun))
-    
-    self:ignoreAnchorPointForPosition(false)
-    self:setAnchorPoint(ccp(0.5, 0))
-    self:scheduleUpdateWithPriorityLua(handler(self, self.update),10) 
-
-   
-end
-
 function Soldier:update(dt)
     
     if self.fsm:getState() == "walking" then
@@ -35,13 +16,36 @@ function Soldier:update(dt)
     if self.fsm:getState() == "idle" then
        self.fsm:doEvent("walk")
     end
-
 end
 
+function Soldier:ctor(name)
+   self.name = name
+end
+
+function Soldier:initArmor()
+    local armor = CCArmature:create(self.name)
+    armor:getAnimation():play("idle",-1,-1,1)
+    self:setContentSize(armor:getContentSize())
+    armor:setPosition(self:getContentSize().width/2,0)
+    self:addChild(armor)
+    self.body = armor 
+
+    self.body:getAnimation():registerMovementHandler(handler(self, self.MovementEventCallFun))
+    self.body:getAnimation():regisetrFrameHandler(handler(self, self.FrameEventCallFun))
+
+    self:ignoreAnchorPointForPosition(false)
+    self:setAnchorPoint(ccp(0.5, 0))
+end
+
+function Soldier:init()
+   self:initArmor()
+   self:initStateMachine()
+   self:scheduleUpdateWithPriorityLua(handler(self, self.update),10) 
+end
 
 function Soldier:create(name)
 	local ref = Soldier.new(name)
-	ref:initStateMachine()
+  ref:init()
 	return ref
 end
 

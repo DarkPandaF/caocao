@@ -55,11 +55,10 @@ function SummonBtn:isInTouch(x,y)
 	end
 end
 
-function SummonBtn:onTouch(eventType, x, y)
-    
-    if self.lock or self.isincool  then
-    	return false
-    end
+function SummonBtn:onTouch(eventType, x, y)  
+  if self.lock or self.isincool  then
+  	return false
+  end
 
 	self.isInWork = self.isInWork or false
 	if eventType == "began" then  
@@ -88,7 +87,6 @@ function SummonBtn:onTouch(eventType, x, y)
        	   self.isInWork = false
        end
 	end
-
 end
 
 function SummonBtn:setSelected(sel)
@@ -115,5 +113,4 @@ function SummonBtn:coolSummon()
     	                                             CCCallFunc:create(actonend)
     	                                             )
     self.cooltimer:runAction(action)
-
 end

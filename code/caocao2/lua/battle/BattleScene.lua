@@ -9,12 +9,14 @@ function BattleScene:ctor()
    self:initBg()
    self:initButtonLayer()
    self:initPlayer()
+   self:initTimer()
 end
 
 function BattleScene:loadArmature()
     local adm = CCArmatureDataManager:sharedArmatureDataManager()
     adm:addArmatureFileInfo(P("hero/caocao/caocao.ExportJson"))
     adm:addArmatureFileInfo(P("hero/caochong/caochong.ExportJson"))
+    adm:addArmatureFileInfo(P("hero/zhangrang/zhangrang.ExportJson"))
 
 end
 
@@ -200,12 +202,25 @@ function BattleScene:getPlayerState()
    return self.player.fsm
 end
 
+--召唤士兵
 function BattleScene:onSummonSoldier()
 
     local soldier = Soldier:create("caochong")
     soldier:setPosition(0,20)
     soldier.fsm:doEvent("init")
     self.layer3:addChild(soldier)
+end
+
+--创建敌人
+function BattleScene:createEnemy()
+    local enemy = Enemy:create("zhangrang")
+    enemy:setPosition(self.layer3:getContentSize().width,40)
+    enemy.fsm:doEvent("init")
+    self.layer3:addChild(enemy)
+end
+
+function BattleScene:initTimer()
+   self.timerid =  CCDirector:sharedDirector():getScheduler():scheduleScriptFunc(handler(self, self.createEnemy),3,false)
 end
 
 function BattleScene:onLeft()
@@ -237,4 +252,6 @@ function BattleScene:onGunClick()
       self:getPlayerState():doEvent("shoot")
    end
 end
+
+
 
