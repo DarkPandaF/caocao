@@ -75,7 +75,7 @@ function BattleScene:initBg()
         layer3:addChild(line)  
     end 
     
-    local vsize = 40
+    local vsize = 50
     local vcount = math.modf(2000/vsize)
 
     for i=1, vcount do
