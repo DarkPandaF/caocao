@@ -67,11 +67,22 @@ function BattleScene:initBg()
     layer3:setPosition(0,216)
     self:addChild(layer3)
     
-    local posy = 122/4
-    for i=1,3 do
+    
+    --画格子
+    local posy = 122/3
+    for i=1,2 do
         local line =  ScutCxControl.ScutLineNode:lineWithPoint(ccp(0, i * posy),ccp(2000, i*posy),1,ccc4(255,255,0,255))
         layer3:addChild(line)  
     end 
+    
+    local vsize = 40
+    local vcount = math.modf(2000/vsize)
+
+    for i=1, vcount do
+        local line =  ScutCxControl.ScutLineNode:lineWithPoint(ccp(i*vsize, 0),ccp(i*vsize, 122),1,ccc4(255,255,0,255))
+        layer3:addChild(line) 
+    end
+
     
 
     self.layer3 = layer3
@@ -220,10 +231,14 @@ end
 
 --创建敌人
 function BattleScene:createEnemy()
-    local enemy = Enemy:create("zhangrang")
+
+    self.enemyindex = self.enemyindex or 0
+    local enemy = Enemy:create("zhangrang",self.enemyindex)
     enemy:setPosition(self.layer3:getContentSize().width,40)
     enemy.fsm:doEvent("init")
     self.layer3:addChild(enemy)
+
+    self.enemyindex = (self.enemyindex + 1) % 9
 end
 
 function BattleScene:initTimer()
