@@ -68,7 +68,7 @@ function Soldier:create(name)
 end
 
 function Soldier:FrameEventCallFun(bone,eventname,cid,oid)
-   print("hello:"..eventname)
+   
 end
 
 function Soldier:MovementEventCallFun(armature,moveevnettype,movementid)

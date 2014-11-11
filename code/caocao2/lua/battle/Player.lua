@@ -15,6 +15,8 @@ end
 
 function Player:ctor()
     
+    self.gridindex = 0
+
     local armor = CCArmature:create("caocao")
     armor:getAnimation():play("idle",-1,-1,1)
     self:setContentSize(armor:getContentSize())

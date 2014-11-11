@@ -1,3 +1,4 @@
+math.randomseed(os.time())
 require("extern")
 BattleScene = class("BattleScene", function ()
 	return CCScene:create()
@@ -14,6 +15,23 @@ function BattleScene:ctor()
    self.soldierpool = {}
    self.enemypool   = {}
    
+   --士兵列表,敌人列表
+   self.soldierslist = {}
+   self.enemylist = {}
+   
+   
+
+end
+
+--释放资源
+function BattleScene:release()
+    for i,v in ipairs(self.soldierpool) do
+       v:release()
+    end
+
+    for i,v in ipairs(self.enemypool) do
+       v:release()
+    end
 
 end
 
@@ -22,7 +40,6 @@ function BattleScene:loadArmature()
     adm:addArmatureFileInfo(P("hero/caocao/caocao.ExportJson"))
     adm:addArmatureFileInfo(P("hero/caochong/caochong.ExportJson"))
     adm:addArmatureFileInfo(P("hero/zhangrang/zhangrang.ExportJson"))
-
 end
 
 function BattleScene:initBg()
@@ -80,8 +97,18 @@ function BattleScene:initBg()
         layer3:addChild(line)  
     end 
     
+
+    self.vpos = {
+       [1] = 0.5 * posy ,
+       [2] = 1.5 * posy ,
+       [3] = 2.5 * posy,
+       [4] = 3.5 * posy
+    }
+
+
     local vsize = 15
     local vcount = math.modf(2000/vsize)
+    self.vsize = vsize
 
     for i=1, vcount do
         local line =  ScutCxControl.ScutLineNode:lineWithPoint(ccp(i*vsize, 0),ccp(i*vsize, 122),1,ccc4(255,255,0,255))
@@ -96,12 +123,14 @@ end
 function BattleScene:initPlayer()
     local armor = Player:create(self)
     armor:setScale(0.5)
-    armor:setPosition(armor:getContentSize().width / 2 * armor:getScaleX() ,20)
+    armor:setPosition(armor:getContentSize().width / 2 * armor:getScaleX() ,self.vpos[3])
     self.layer3:addChild(armor) 
     
     self.player = armor
     self:setViewpointCenter(self.player:getPosition())
 
+    --坐标ID
+    armor.gridindex = self:getGridNum(armor:getPositionX())
     self.player.fsm:doEvent("init")
 end
 
@@ -116,6 +145,47 @@ function BattleScene:getCanMovepos(x)
    return result   
 end
 
+--获得网格ID
+function BattleScene:getGridNum(x)
+    local num = math.modf(x / self.vsize) 
+    num = num + 1
+    return num
+end
+
+
+function BattleScene:addEnemyToGrid(enemy,gridindex)
+     self.enemylist[gridindex] =  self.enemylist[gridindex]  or {}
+     table.insert(self.enemylist,enemy)
+end
+
+function BattleScene:removeEnemyFromGrid(enemy,gridindex)
+    local index = 0
+    for k,v in pairs(self.enemylist[gridindex]) do
+       if enemy == v then
+          index = k
+          break
+       end
+    end
+    self.enemylist[gridindex][index] = nil
+end
+
+function BattleScene:addSoldierToGrid(soldier,gridindex)
+    self.soldierslist[gridindex] = self.soldierslist[gridindex] or {}
+    table.insert(self.soldierslist,soldier)
+end
+
+function BattleScene:removeSoldierToGrid(soldier,gridindex)
+    local index = 0
+    for k,v in pairs(self.soldierslist[gridindex]) do
+       if soldier == v then
+          index = k
+          break
+       end
+    end
+    self.soldierslist[gridindex][index] = nil
+end
+
+--居中显示
 function BattleScene:setViewpointCenter(x,y)
          
     local pos1 = ccp(self.layer1:getPosition())
@@ -258,14 +328,18 @@ function BattleScene:getEnemy()
     return result
 end
 
-
 --召唤士兵
 function BattleScene:onSummonSoldier()
 
     local soldier = self:getSoldier()
-    soldier:setPosition(0,20)
+    local num = math.random(1,4)
+    soldier:setPosition(0,self.vpos[num])
+    
+    soldier.gridindex = self:getGridNum(soldier:getPositionX())
+    self:addSoldierToGrid(soldier, soldier.gridindex)
+    
     soldier:initState()
-    self.layer3:addChild(soldier)
+    self.layer3:addChild(soldier,4-num)
 end
 
 --创建敌人
@@ -273,9 +347,14 @@ function BattleScene:createEnemy()
 
     self.enemyindex = self.enemyindex or 0 
     local enemy =  self:getEnemy()
-    enemy:setPosition(self.layer3:getContentSize().width,40)
+    local num = math.random(1,4)
+    enemy:setPosition(self.layer3:getContentSize().width,self.vpos[num])
+
+    enemy.gridindex = self:getGridNum(enemy:getPositionX())
+    self:addEnemyToGrid(enemy, enemy.gridindex)
+
     enemy:initEnemyState(self.enemyindex)
-    self.layer3:addChild(enemy)
+    self.layer3:addChild(enemy,4-num)
     self.enemyindex = (self.enemyindex + 1) % 10 
    
 end
@@ -284,30 +363,35 @@ function BattleScene:initTimer()
    self.timerid =  CCDirector:sharedDirector():getScheduler():scheduleScriptFunc(handler(self, self.createEnemy),5,false)
 end
 
+--左走
 function BattleScene:onLeft()
     if self:getPlayerState():canDoEvent("walkleft") then
        self:getPlayerState():doEvent("walkleft")
     end
 end
 
+--右走
 function BattleScene:onRight()
     if self:getPlayerState():canDoEvent("walkright") then
        self:getPlayerState():doEvent("walkright")
     end
 end
 
+--停止
 function BattleScene:onStop()
    if self:getPlayerState():canDoEvent("stop") then
       self:getPlayerState():doEvent("stop")
    end
 end 
 
+--左手武器
 function BattleScene:onLeftHandClick()
    if self:getPlayerState():canDoEvent("attack") then
       self:getPlayerState():doEvent("attack")
    end
 end
 
+--右手武器
 function BattleScene:onGunClick()
    if self:getPlayerState():canDoEvent("shoot") then
       self:getPlayerState():doEvent("shoot")
