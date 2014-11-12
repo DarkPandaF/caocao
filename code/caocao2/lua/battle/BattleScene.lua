@@ -106,7 +106,7 @@ function BattleScene:initBg()
     }
 
 
-    local vsize = 40
+    local vsize = 20
     local vcount = math.modf(2000/vsize)
     self.vsize = vsize
 

@@ -41,7 +41,12 @@ function Enemy:update(dt)
            self.scene:removeEnemyFromGrid(self,self.gridindex)
            self.gridindex = gridindex
            self.scene:addEnemyToGrid(self,self.gridindex)
-           self.fsm:doEvent("stop")
+           
+           self.target = self:findTarget()
+           if self.target then
+              self.fsm:doEvent("stop")
+           end 
+
         end
 
         if x <= 0 then
@@ -60,7 +65,7 @@ function Enemy:initEnemyState(index)
    self.cindex = index
    self:changeDisPlay()
    self.hp = 1000
-   self.attackRange = 1
+   self.attackRange = 2
 
 end
 

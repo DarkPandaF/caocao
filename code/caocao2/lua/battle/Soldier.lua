@@ -17,7 +17,12 @@ function Soldier:update(dt)
            self.scene:removeSoldierToGrid(self,self.gridindex)
            self.gridindex = gridindex
            self.scene:addSoldierToGrid(self,self.gridindex)
-           self.fsm:doEvent("stop")
+           
+           self.target = self:findTarget()
+           if self.target then
+              self.fsm:doEvent("stop")
+           end  
+
         end
 
         if x >= self:getParent():getContentSize().width then
@@ -61,7 +66,7 @@ end
 function Soldier:initState()
    
    self.hp = 1000
-   self.attackRange = 5
+   self.attackRange = 10
    self.fsm:doEvent("init")
    self:scheduleUpdateWithPriorityLua(handler(self, self.update),10) 
 end 
