@@ -106,7 +106,7 @@ function BattleScene:initBg()
     }
 
 
-    local vsize = 15
+    local vsize = 40
     local vcount = math.modf(2000/vsize)
     self.vsize = vsize
 
@@ -124,7 +124,7 @@ function BattleScene:initPlayer()
     local armor = Player:create(self)
     armor:setScale(0.5)
     armor:setPosition(armor:getContentSize().width / 2 * armor:getScaleX() ,self.vpos[3])
-    self.layer3:addChild(armor) 
+    self.layer3:addChild(armor,4-3) 
     
     self.player = armor
     self:setViewpointCenter(self.player:getPosition())
@@ -155,7 +155,8 @@ end
 
 function BattleScene:addEnemyToGrid(enemy,gridindex)
      self.enemylist[gridindex] =  self.enemylist[gridindex]  or {}
-     table.insert(self.enemylist,enemy)
+     table.insert(self.enemylist[gridindex],enemy)
+  
 end
 
 function BattleScene:removeEnemyFromGrid(enemy,gridindex)
@@ -171,7 +172,8 @@ end
 
 function BattleScene:addSoldierToGrid(soldier,gridindex)
     self.soldierslist[gridindex] = self.soldierslist[gridindex] or {}
-    table.insert(self.soldierslist,soldier)
+    table.insert(self.soldierslist[gridindex],soldier)
+
 end
 
 function BattleScene:removeSoldierToGrid(soldier,gridindex)
@@ -298,13 +300,12 @@ function BattleScene:getSoldier()
     local result = nil 
     for i,v in ipairs(self.soldierpool) do
        if v and not v:getParent() then
-          print("getoldsoldier")
           result = v
           break
        end
     end 
     if not result then
-       result = Soldier:create("caochong")
+       result = Soldier:create("caochong",self)
        result:retain()
        table.insert(self.soldierpool,result)
     end
@@ -315,13 +316,12 @@ function BattleScene:getEnemy()
     local result = nil 
     for i,v in ipairs(self.enemypool) do
        if v and not v:getParent() then
-          print("getoldenemy")
           result = v
           break
        end
     end 
     if not result then
-       result = Enemy:create("zhangrang",0)
+       result = Enemy:create("zhangrang",0,self)
        result:retain()
        table.insert(self.enemypool,result)
     end
@@ -356,7 +356,11 @@ function BattleScene:createEnemy()
     enemy:initEnemyState(self.enemyindex)
     self.layer3:addChild(enemy,4-num)
     self.enemyindex = (self.enemyindex + 1) % 10 
-   
+    
+    if self.timerid ~= -1 then
+        CCDirector:sharedDirector():getScheduler():unscheduleScriptEntry(self.timerid)
+        self.timerid = -1
+     end 
 end
 
 function BattleScene:initTimer()

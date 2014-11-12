@@ -38,6 +38,11 @@ function Player:update(dt)
         local pos = self.scene:getCanMovepos(-2)
         self:setPosition(pos)
         self.scene:setViewpointCenter(pos.x,pos.y)
+
+        local gridindex = self.scene:getGridNum(pos.x)
+        if self.gridindex ~= gridindex then
+           self.gridindex = gridindex
+        end
     	return
     end
 
@@ -45,6 +50,11 @@ function Player:update(dt)
         local pos = self.scene:getCanMovepos(2)
         self:setPosition(pos)
         self.scene:setViewpointCenter(pos.x,pos.y)
+        
+        local gridindex = self.scene:getGridNum(pos.x)
+        if self.gridindex ~= gridindex then
+           self.gridindex = gridindex
+        end
        return 
     end
 end
@@ -119,5 +129,9 @@ end
 
 function Player:onShooting(event)
    self.body:getAnimation():play("shoot_rifle",-1,-1,0)
+end
+
+function Player:isDead()
+   return self.fsm:getState() == "dead"
 end
 
