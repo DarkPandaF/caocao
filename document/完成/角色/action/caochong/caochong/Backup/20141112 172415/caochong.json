@@ -7,20 +7,6 @@
       "name": "caochong",
       "bone_data": [
         {
-          "name": "peak",
-          "parent": "",
-          "x": 175.5,
-          "y": 158.67333984375,
-          "z": 21,
-          "cX": 1.0,
-          "cY": 1.0,
-          "kX": 0.0,
-          "kY": 0.0,
-          "arrow_x": 0.0,
-          "arrow_y": 0.0,
-          "effectbyskeleton": true
-        },
-        {
           "name": "attackedpoint",
           "parent": "",
           "x": 12.5,
@@ -2944,32 +2930,13 @@
         },
         {
           "name": "attack",
-          "dr": 31,
+          "dr": 30,
           "lp": false,
           "to": 0,
           "drTW": 0,
           "twE": 0,
           "sc": 0.416666657,
           "mov_bone_data": [
-            {
-              "name": "peak",
-              "dl": 0.0,
-              "frame_data": [
-                {
-                  "dI": -1,
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 0,
-                  "twE": 0,
-                  "tweenFrame": true
-                }
-              ]
-            },
             {
               "name": "attackedpoint",
               "dl": 0.0,
