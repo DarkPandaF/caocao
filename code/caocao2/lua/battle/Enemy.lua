@@ -65,7 +65,7 @@ function Enemy:initEnemyState(index)
    self.cindex = index
    self:changeDisPlay()
    self.hp = 1000
-   self.attackRange = 2
+   self.attackRange = 3
 
 end
 
