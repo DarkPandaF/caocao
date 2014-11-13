@@ -180,6 +180,8 @@ function Soldier:subHp(attackvalue)
     self:setHpPer(self.hp/1000 * 100)
     if self.hp <= 0 then
        self.fsm:doEvent("kill")
+    else
+       self:doEffect()
     end
 end
 
@@ -238,7 +240,9 @@ function Soldier:onDead(event)
 end
 
 function Soldier:FrameEventCallFun(bone,eventname,cid,oid)
-    print("soldier:"..eventname)
+    if eventname == "attack" then
+       self:doShoot()
+    end
 end
 
 function Soldier:MovementEventCallFun(armature,moveevnettype,movementid)
@@ -257,4 +261,109 @@ function Soldier:MovementEventCallFun(armature,moveevnettype,movementid)
    end
 end
 
+
+--效果
+function Soldier:EffecttEventCallFun(armature,moveevnettype,movementid)
+    if moveevnettype == 1 or moveevnettype == 2 then
+       
+       if movementid == "attackedeffect" then
+          armature:removeFromParentAndCleanup(false)
+       end 
+
+    end
+end
+
+function Soldier:getEffectArmor()
+   self.effectlist = self.effectlist or {}
+   local armor = nil
+   for i,v in ipairs(self.effectlist) do
+       if not v:getParent() then
+          armor = v
+          break
+       end
+   end
+   if not armor then
+      armor = CCArmature:create("commoneffect")
+      armor:getAnimation():registerMovementHandler(handler(self, self.EffecttEventCallFun))
+      table.insert(self.effectlist,armor)
+   end
+   return armor
+end
+
+function Soldier:doEffect()
+    local effect = self:getEffectArmor()
+    effect:getAnimation():play("attackedeffect",-1,-1,0)
+    
+    local bone = self.body:getBone("attackedpoint")
+    effect:setPosition(bone:getWorldInfo():getX() , bone:getWorldInfo():getY()) 
+    self.body:addChild(effect,100)
+end
+
+function Soldier:getBullet()
+   self.buttetlist = self.buttetlist or {}
+   local buttet = nil
+   for i,v in ipairs(self.buttetlist) do
+       if not v:getParent() then
+          print("find buttet")
+          buttet = v
+          break
+       end
+   end
+   
+   if not buttet  then
+      buttet = CCSprite:create(P("battle/80001.png"))
+      --TODO 记得最后要release
+      buttet:retain()
+   end
+   return buttet
+end
+
+function Soldier:doShoot()
+   
+    if not self.target then
+       return 
+    end
+    
+    local function playend(ref)
+        if self.target then
+           self.target:subHp(100)
+        end
+        print("playend")
+        ref:removeFromParentAndCleanup(false)
+    end
+
+    local buttet = self:getBullet()
+    local shootpos =  self:getShootPos()
+    local peakpos =   self:getPeakPos()
+    local endpos =    self.target:getBeShootPos()
+    
+    print(shootpos.x,shootpos.y)
+    print(peakpos.x,shootpos.y)
+    print(endpos.x,endpos.y)
+    local time = ccpDistance(shootpos, endpos) * 0.15
+
+    local action   = CCSequence:createWithTwoActions(CCParabolyTo:create(time,shootpos,peakpos,endpos)
+                                                     ,CCCallFuncN:create(playend))
+
+    buttet:runAction(action)
+    self:getParent():addChild(buttet,1000)
+
+end
+
+function Soldier:getShootPos()
+   local bone = self.body:getBone("shootingpoint")
+   local pos =  self.body:convertToWorldSpace(ccp(bone:getWorldInfo():getX() , bone:getWorldInfo():getY()))
+   return self:getParent():convertToNodeSpace(pos)
+end
+
+function Soldier:getPeakPos()
+   local bone = self.body:getBone("peak")
+   local pos  = self.body:convertToWorldSpace(ccp(bone:getWorldInfo():getX() , bone:getWorldInfo():getY())) 
+   return self:getParent():convertToNodeSpace(pos)  
+end
+
+function Soldier:getBeShootPos()
+   local pos  = self:convertToWorldSpace(ccp(self:getContentSize().width/2,0))
+   return self:getParent():convertToNodeSpace(pos)  
+end
 
