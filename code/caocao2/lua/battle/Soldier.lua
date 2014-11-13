@@ -31,7 +31,6 @@ function Soldier:update(dt)
     end
 
     if self.fsm:getState() == "idle" then
-       print("dologic")
        self:doLogic()
     end
 end
@@ -208,7 +207,6 @@ end
 function Soldier:doLogic()
    
    if self:isCanAttack() then
-      print("attack")
       self.fsm:doEvent("attack")
       return
    end
@@ -327,9 +325,6 @@ function Soldier:doShoot()
     local peakpos =   self:getPeakPos()
     local endpos =    self.target:getBeShootPos()
     
-    print(shootpos.x,shootpos.y)
-    print(peakpos.x,shootpos.y)
-    print(endpos.x,endpos.y)
     --local time = ccpDistance(shootpos, endpos) /1000 * 0.15
     local time = 0.15
 

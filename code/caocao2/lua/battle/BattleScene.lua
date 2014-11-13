@@ -93,10 +93,11 @@ function BattleScene:initBg()
     
     --画格子
     local posy = 122/4
-    for i=1,3 do
-        local line =  ScutCxControl.ScutLineNode:lineWithPoint(ccp(0, i * posy),ccp(2000, i*posy),1,ccc4(255,255,0,255))
-        layer3:addChild(line)  
-    end 
+    
+    -- for i=1,3 do
+    --     local line =  ScutCxControl.ScutLineNode:lineWithPoint(ccp(0, i * posy),ccp(2000, i*posy),1,ccc4(255,255,0,255))
+    --     layer3:addChild(line)  
+    -- end 
     
 
     self.vpos = {
@@ -111,10 +112,10 @@ function BattleScene:initBg()
     local vcount = math.modf(2000/vsize)
     self.vsize = vsize
 
-    for i=1, vcount do
-        local line =  ScutCxControl.ScutLineNode:lineWithPoint(ccp(i*vsize, 0),ccp(i*vsize, 122),1,ccc4(255,255,0,255))
-        layer3:addChild(line) 
-    end
+    -- for i=1, vcount do
+    --     local line =  ScutCxControl.ScutLineNode:lineWithPoint(ccp(i*vsize, 0),ccp(i*vsize, 122),1,ccc4(255,255,0,255))
+    --     layer3:addChild(line) 
+    -- end
 
     
 
