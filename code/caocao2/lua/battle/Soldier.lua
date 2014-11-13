@@ -73,7 +73,9 @@ function Soldier:initState()
    self.hp = 1000
    self.attackRange = 10
    self.fsm:doEvent("init")
-   self:scheduleUpdateWithPriorityLua(handler(self, self.update),10) 
+   self:scheduleUpdateWithPriorityLua(handler(self, self.update),10)
+   self.body:getAnimation():registerMovementHandler(handler(self, self.MovementEventCallFun))
+   self.body:getAnimation():regisetrFrameHandler(handler(self, self.FrameEventCallFun)) 
 end 
 
 function Soldier:create(name,scene)
