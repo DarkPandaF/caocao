@@ -14,6 +14,15 @@ function Enemy:create(name,index,scene)
    return ref
 end
 
+
+function Enemy:finish()
+    self.scene:removeEnemyFromGrid(self,self.gridindex)
+    self.hpbg:setVisible(false)
+    self:unscheduleUpdate()
+    self.fsm:doEvent("reset")
+    self:removeFromParentAndCleanup(false)
+end
+
 function Enemy:init()
    self:initArmor()
    self:initHpBar()

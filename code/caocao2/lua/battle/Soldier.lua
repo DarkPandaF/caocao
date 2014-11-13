@@ -31,6 +31,7 @@ function Soldier:update(dt)
     end
 
     if self.fsm:getState() == "idle" then
+       print("dologic")
        self:doLogic()
     end
 end
@@ -40,12 +41,14 @@ function Soldier:ctor(name)
 end
 
 function Soldier:finish()
-
+    
+    self.scene:removeSoldierToGrid(self,self.gridindex)
     self.hpbg:setVisible(false)
     self:unscheduleUpdate()
     self.fsm:doEvent("reset")
     self:removeFromParentAndCleanup(false)
 end
+
 function Soldier:initArmor()
     local armor = CCArmature:create(self.name)
     armor:getAnimation():play("idle",-1,-1,1)
@@ -205,6 +208,7 @@ end
 function Soldier:doLogic()
    
    if self:isCanAttack() then
+      print("attack")
       self.fsm:doEvent("attack")
       return
    end
