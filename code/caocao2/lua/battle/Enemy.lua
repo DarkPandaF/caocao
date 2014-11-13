@@ -16,9 +16,10 @@ end
 
 function Enemy:init()
    self:initArmor()
+   self:initHpBar()
    self:changeDisPlay()
    self:initStateMachine()
-   self:scheduleUpdateWithPriorityLua(handler(self, self.update),10) 
+ 
 end
 
 function Enemy:changeDisPlay()
@@ -66,7 +67,6 @@ function Enemy:initEnemyState(index)
    self:changeDisPlay()
    self.hp = 1000
    self.attackRange = 3
-
 end
 
 function Enemy:onDead(event)
@@ -105,7 +105,6 @@ function Enemy:findTarget()
         if list ~= nil then
            table.foreach(list,function(i,v)
                           if v and not target and not v:isDead() then
-                             print("findtarget",from,to)
                              target = v
                           end
                         end)      
@@ -115,4 +114,19 @@ function Enemy:findTarget()
         end
     end
     return target
+end
+
+function Enemy:FrameEventCallFun(bone,eventname,cid,oid)
+    
+    if eventname == "attack" then
+       
+       if self.target then
+          local rect1 = self.target:boundingBox()
+          local rect2 = self:boundingBox()
+          if rect1:intersectsRect(rect2) then
+             self.target:subHp(100)
+          end
+       end
+
+    end
 end

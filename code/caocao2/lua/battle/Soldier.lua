@@ -40,6 +40,8 @@ function Soldier:ctor(name)
 end
 
 function Soldier:finish()
+
+    self.hpbg:setVisible(false)
     self:unscheduleUpdate()
     self.fsm:doEvent("reset")
     self:removeFromParentAndCleanup(false)
@@ -58,10 +60,13 @@ function Soldier:initArmor()
     self:ignoreAnchorPointForPosition(false)
     self:setAnchorPoint(ccp(0.5, 0))
 end
+
 function Soldier:init()
    self:initArmor()
+   self:initHpBar()
    self:initStateMachine()
 end
+
 --初始化状态
 function Soldier:initState()
    
@@ -123,9 +128,61 @@ function Soldier:findTarget()
     return target
 end
 
+function Soldier:initHpBar()
+   
+   local hpbg = CCSprite:create(P("battle/soldierbarbg.png"))
+   hpbg:setPosition(self:getContentSize().width/2, self:getContentSize().height)
+   self:addChild(hpbg)
+   self.hpbg = hpbg
+
+   local barsp = CCSprite:create(P("battle/soldierbargreen.png"))
+   local hpbar   = CCProgressTimer:create(barsp)
+   hpbar:setType(1)
+   hpbar:setMidpoint(ccp(0, 0))
+   hpbar:setBarChangeRate(ccp(1, 0))
+   hpbar:setPercentage(80)
+   hpbar:setAnchorPoint(ccp(0.5, 0.5))
+   hpbar:setPosition(hpbg:getContentSize().width/2,hpbg:getContentSize().height/2)
+   hpbg:addChild(hpbar)
+   
+   
+   --进度条颜色 1 绿色 2红色
+   self.barstate = 1
+
+   self.barsp = barsp
+   self.hpbar = hpbar
+   
+   self.hpbg:setVisible(false)
+end
+
+function Soldier:setHpPer(num)
+   self.hpbg:setVisible(true)
+   if num > 30 then
+      if self.barstate == 2 then
+         local texture = CCTextureCache:sharedTextureCache():addImage(P("battle/soldierbargreen.png"))
+         self.barsp:setTexture(texture)
+         self.barstate = 1
+      end
+   else
+      if self.barstate == 1 then
+         local texture = CCTextureCache:sharedTextureCache():addImage(P("battle/soldierbarred.png"))
+         self.barsp:setTexture(texture)
+         self.barstate = 2
+      end
+   end
+   print(num)
+   self.hpbar:setPercentage(num)
+end
+
 --扣除hp
 function Soldier:subHp(attackvalue)
+    self.hp = self.hp - attackvalue
+    self:setHpPer(self.hp/1000 * 100)
+    if self.hp <= 0 then
+       self.fsm:doEvent("kill")
+    end
 end
+
 
 function Soldier:isCanAttack()
     
@@ -145,7 +202,6 @@ end
 function Soldier:doLogic()
    
    if self:isCanAttack() then
-      print("attack")
       self.fsm:doEvent("attack")
       return
    end
@@ -159,7 +215,6 @@ function Soldier:doLogic()
    end
 
 end 
-
 
 --是否死亡
 function Soldier:isDead()
@@ -183,13 +238,22 @@ function Soldier:onDead(event)
 end
 
 function Soldier:FrameEventCallFun(bone,eventname,cid,oid)
+    print("soldier:"..eventname)
 end
 
 function Soldier:MovementEventCallFun(armature,moveevnettype,movementid)
    if moveevnettype == 1 or moveevnettype == 2 then
+      
       if movementid == "attack" then
-         self.fsm:doEvent("stopattack")   
+         self.fsm:doEvent("stopattack")
+         return   
       end
+      
+      if movementid == "dead" then
+         self:finish()
+         return
+      end
+
    end
 end
 

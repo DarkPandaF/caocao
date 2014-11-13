@@ -60,8 +60,9 @@ function Player:update(dt)
 end
 
 
+
 function Player:FrameEventCallFun(bone,eventname,cid,oid)
-   print("hello:"..eventname)
+   
 end
 
 function Player:MovementEventCallFun(armature,moveevnettype,movementid)
@@ -133,5 +134,10 @@ end
 
 function Player:isDead()
    return self.fsm:getState() == "dead"
+end
+
+--扣血
+function Player:subHp(attackvalue)
+
 end
 

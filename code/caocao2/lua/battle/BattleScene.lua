@@ -40,6 +40,7 @@ function BattleScene:loadArmature()
     adm:addArmatureFileInfo(P("hero/caocao/caocao.ExportJson"))
     adm:addArmatureFileInfo(P("hero/caochong/caochong.ExportJson"))
     adm:addArmatureFileInfo(P("hero/zhangrang/zhangrang.ExportJson"))
+    adm:addArmatureFileInfo(P("hero/commoneffect/commoneffect.ExportJson"))
 end
 
 function BattleScene:initBg()
