@@ -357,11 +357,11 @@ function BattleScene:createEnemy()
     enemy:initEnemyState(self.enemyindex)
     self.layer3:addChild(enemy,4-num)
     self.enemyindex = (self.enemyindex + 1) % 10 
-    
-    if self.timerid ~= -1 then
-        CCDirector:sharedDirector():getScheduler():unscheduleScriptEntry(self.timerid)
-        self.timerid = -1
-     end 
+       
+    -- if self.timerid ~= -1 then
+    --     CCDirector:sharedDirector():getScheduler():unscheduleScriptEntry(self.timerid)
+    --     self.timerid = -1
+    --  end 
 end
 
 function BattleScene:initTimer()

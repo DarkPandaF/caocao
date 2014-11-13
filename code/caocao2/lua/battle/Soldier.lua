@@ -170,7 +170,6 @@ function Soldier:setHpPer(num)
          self.barstate = 2
       end
    end
-   print(num)
    self.hpbar:setPercentage(num)
 end
 
@@ -300,21 +299,7 @@ function Soldier:doEffect()
 end
 
 function Soldier:getBullet()
-   self.buttetlist = self.buttetlist or {}
-   local buttet = nil
-   for i,v in ipairs(self.buttetlist) do
-       if not v:getParent() then
-          print("find buttet")
-          buttet = v
-          break
-       end
-   end
-   
-   if not buttet  then
-      buttet = CCSprite:create(P("battle/80001.png"))
-      --TODO 记得最后要release
-      buttet:retain()
-   end
+   local buttet = CCSprite:create(P("battle/80001.png"))
    return buttet
 end
 
@@ -328,8 +313,7 @@ function Soldier:doShoot()
         if self.target then
            self.target:subHp(100)
         end
-        print("playend")
-        ref:removeFromParentAndCleanup(false)
+        ref:removeFromParentAndCleanup(true)
     end
 
     local buttet = self:getBullet()
@@ -340,7 +324,8 @@ function Soldier:doShoot()
     print(shootpos.x,shootpos.y)
     print(peakpos.x,shootpos.y)
     print(endpos.x,endpos.y)
-    local time = ccpDistance(shootpos, endpos) * 0.15
+    --local time = ccpDistance(shootpos, endpos) /1000 * 0.15
+    local time = 0.15
 
     local action   = CCSequence:createWithTwoActions(CCParabolyTo:create(time,shootpos,peakpos,endpos)
                                                      ,CCCallFuncN:create(playend))
@@ -363,7 +348,7 @@ function Soldier:getPeakPos()
 end
 
 function Soldier:getBeShootPos()
-   local pos  = self:convertToWorldSpace(ccp(self:getContentSize().width/2,0))
+   local pos  = self:convertToWorldSpace(ccp(0,0))
    return self:getParent():convertToNodeSpace(pos)  
 end
 
