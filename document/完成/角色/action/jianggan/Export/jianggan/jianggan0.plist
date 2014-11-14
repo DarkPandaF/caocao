@@ -281,9 +281,9 @@
 				<key>originalHeight</key>
 				<integer>19</integer>
 				<key>x</key>
-				<integer>491</integer>
-				<key>y</key>
 				<integer>0</integer>
+				<key>y</key>
+				<integer>55</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -300,9 +300,9 @@
 				<key>originalHeight</key>
 				<integer>20</integer>
 				<key>x</key>
-				<integer>513</integer>
+				<integer>22</integer>
 				<key>y</key>
-				<integer>0</integer>
+				<integer>55</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -319,9 +319,9 @@
 				<key>originalHeight</key>
 				<integer>20</integer>
 				<key>x</key>
-				<integer>535</integer>
+				<integer>44</integer>
 				<key>y</key>
-				<integer>0</integer>
+				<integer>55</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -338,9 +338,9 @@
 				<key>originalHeight</key>
 				<integer>17</integer>
 				<key>x</key>
-				<integer>548</integer>
+				<integer>57</integer>
 				<key>y</key>
-				<integer>0</integer>
+				<integer>55</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -356,14 +356,14 @@
 			<key>realTextureFileName</key>
 			<string>jianggan0.png</string>
 			<key>size</key>
-			<string>{1024,1024}</string>
+			<string>{512,512}</string>
 		</dict>
 		<key>texture</key>
 		<dict>
 			<key>width</key>
-			<integer>1024</integer>
+			<integer>512</integer>
 			<key>height</key>
-			<integer>1024</integer>
+			<integer>512</integer>
 		</dict>
 	</dict>
 </plist>
