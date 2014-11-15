@@ -7856,7 +7856,7 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "rightshoot"
+                  "evt": "attack"
                 },
                 {
                   "dI": -1,
@@ -10026,7 +10026,7 @@
                   "fi": 9,
                   "twE": 0,
                   "tweenFrame": true,
-                  "evt": "rightshoot"
+                  "evt": "attack"
                 },
                 {
                   "dI": -1,

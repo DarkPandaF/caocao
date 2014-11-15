@@ -88,21 +88,20 @@ function BattleScene:initBg()
     self:addChild(layer3)
     
     
-    --画格子 (122--to 90)
-    local posy = 70/4
-    local leftp = (122 - 70) / 2  
+    --画格子
+    local posy = 122/4
     
-    for i=0,4 do
-        local line =  ScutCxControl.ScutLineNode:lineWithPoint(ccp(0, i * posy + leftp),ccp(2000, i*posy + leftp),1,ccc4(255,255,0,255))
+    for i=1,3 do
+        local line =  ScutCxControl.ScutLineNode:lineWithPoint(ccp(0, i * posy),ccp(2000, i*posy),1,ccc4(255,255,0,255))
         layer3:addChild(line)  
     end 
     
 
     self.vpos = {
-       [1] = 0.5 * posy + leftp,
-       [2] = 1.5 * posy + leftp ,
-       [3] = 2.5 * posy + leftp,
-       [4] = 3.5 * posy + leftp
+       [1] = 0.5 * posy ,
+       [2] = 1.5 * posy ,
+       [3] = 2.5 * posy,
+       [4] = 3.5 * posy
     }
 
 
