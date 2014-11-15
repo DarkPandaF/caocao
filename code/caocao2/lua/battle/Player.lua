@@ -168,8 +168,10 @@ function Player:CheckBullet()
                 v:removeFromParentAndCleanup(false)
             else
                 local gridindex = self.scene:getGridNum(posx)
-                v.gridindex = gridindex
-                self:doBulletAction(v)              
+                if gridindex ~= v.gridindex  then
+                   v.gridindex = gridindex
+                   self:doBulletAction(v)    
+                end            
             end
 
 
@@ -179,11 +181,11 @@ function Player:CheckBullet()
 end
 
 function Player:doBulletAction(bullet)
-    
-     local list = self.scene.enemylist[bullet.gridindex]
+     
+     local list = self.scene.enemypool
      if list ~= nil then
        for k,v in pairs(list) do
-           if v and not v:isDead() and v:boundingBox():containsPoint(ccp(bullet:getPosition())) then
+           if v and v:getParent() and not v:isDead() and v:boundingBox():containsPoint(ccp(bullet:getPosition())) then
               v:subHp(300,3)
               bullet:removeFromParentAndCleanup(false)  
               break
