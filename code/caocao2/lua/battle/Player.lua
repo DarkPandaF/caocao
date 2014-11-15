@@ -64,6 +64,14 @@ function Player:update(dt)
 end
 
 
+--最后释放内存
+function Player:releaseData()
+    self.bulletlist = self.bulletlist or {}
+     for k,v in pairs(self.bulletlist) do
+         v:release()
+   end
+end
+
 
 function Player:FrameEventCallFun(bone,eventname,cid,oid)
     
@@ -85,6 +93,10 @@ function Player:MovementEventCallFun(armature,moveevnettype,movementid)
        
        if movementid == "shoot_rifle"  then
           self.fsm:doEvent("stopattack")
+       end
+
+       if movementid == "dead" then
+          self:finish()
        end
    end
 end
@@ -299,4 +311,11 @@ function Player:EffecttEventCallFun(armature,moveevnettype,movementid)
        end 
 
     end
+end
+
+function Player:finish()
+    self:releaseData()
+    self:unscheduleUpdate()
+    self.scene:endGame()
+
 end

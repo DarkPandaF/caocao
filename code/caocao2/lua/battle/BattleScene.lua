@@ -18,9 +18,6 @@ function BattleScene:ctor()
    --士兵列表,敌人列表
    self.soldierslist = {}
    self.enemylist = {}
-   
-   
-
 end
 
 --释放资源
@@ -431,5 +428,26 @@ function BattleScene:onGunClick()
    end
 end
 
+
+function BattleScene:endGame()
+    
+     if self.timerid ~= -1 then
+        CCDirector:sharedDirector():getScheduler():unscheduleScriptEntry(self.timerid)
+        self.timerid = -1
+     end 
+
+    for i,v in pairs(self.soldierpool) do
+        if v:getParent() then
+           v:finish()
+        end
+    end
+
+    for i,v in pairs(self.enemypool) do
+        if v:getParent() then
+           v:finish()
+        end
+    end
+
+end
 
 
