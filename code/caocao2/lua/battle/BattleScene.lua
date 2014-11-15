@@ -121,8 +121,8 @@ end
 
 function BattleScene:initPlayer()
     local armor = Player:create(self)
-    armor:setPosition(armor:getContentSize().width / 2 * armor:getScaleX() ,self.vpos[3])
-    self.layer3:addChild(armor,4-3) 
+    armor:setPosition(armor:getContentSize().width / 2 * armor:getScaleX() ,self.vpos[1])
+    self.layer3:addChild(armor,4-1) 
     
     self.player = armor
     self:setViewpointCenter(self.player:getPosition())
