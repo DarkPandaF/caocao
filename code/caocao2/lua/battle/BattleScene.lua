@@ -94,10 +94,10 @@ function BattleScene:initBg()
     --画格子
     local posy = 122/4
     
-    -- for i=1,3 do
-    --     local line =  ScutCxControl.ScutLineNode:lineWithPoint(ccp(0, i * posy),ccp(2000, i*posy),1,ccc4(255,255,0,255))
-    --     layer3:addChild(line)  
-    -- end 
+    for i=1,3 do
+        local line =  ScutCxControl.ScutLineNode:lineWithPoint(ccp(0, i * posy),ccp(2000, i*posy),1,ccc4(255,255,0,255))
+        layer3:addChild(line)  
+    end 
     
 
     self.vpos = {
@@ -174,7 +174,6 @@ end
 function BattleScene:addSoldierToGrid(soldier,gridindex)
     self.soldierslist[gridindex] = self.soldierslist[gridindex] or {}
     table.insert(self.soldierslist[gridindex],soldier)
-
 end
 
 function BattleScene:removeSoldierToGrid(soldier,gridindex)
@@ -216,15 +215,34 @@ end
 --创建按钮层
 function BattleScene:initButtonLayer()
    
+   --界面层
+   local layer = CCLayer:create()
+   self:addChild(layer)
+   self.facelayer = layer
+   
+
    local btnlayer = CCSprite:create(P("battle/buttonlayer.png"))
    btnlayer:setAnchorPoint(ccp(0, 0))
-   self:addChild(btnlayer)
+   layer:addChild(btnlayer)
    
+
+   local barsp = CCSprite:create(P("battle/herobargreen.png"))
+   local hpbar   = CCProgressTimer:create(barsp)
+   hpbar:setType(1)
+   hpbar:setMidpoint(ccp(0, 0))
+   hpbar:setBarChangeRate(ccp(1, 0))
+   hpbar:setPercentage(100)
+   hpbar:setAnchorPoint(ccp(0.5, 1))
+   hpbar:setPosition(layer:getContentSize().width/2,layer:getContentSize().height - 20)
+   layer:addChild(hpbar)
+   self.barsp = barsp
+   self.hpbar = hpbar
+
    
    local soldier1 = SummonBtn:create(P("button/soldierbg.png"),P("button/soldierselect.png"),P("head/head001.png"),handler(self, self.onSummonSoldier),3)
    soldier1:setAnchorPoint(ccp(0, 1))
    soldier1:setPosition(18,btnlayer:getContentSize().height - 13)
-   btnlayer:addChild(soldier1)
+   layer:addChild(soldier1)
    
    local tmpsoldier = soldier1
    for i=1,4 do
@@ -283,13 +301,23 @@ function BattleScene:initButtonLayer()
    local btnleft = UITouchButton.new(P("button/leftnormal.png"),P("button/leftpress.png"),handler(self, self.onLeft),handler(self, self.onStop)) 
    btnleft:setAnchorPoint(ccp(0.5, 0.5))
    btnleft:setPosition(160,weaponbg:boundingBox():getMidY())
-   self:addChild(btnleft)
+   layer:addChild(btnleft)
    
    local btnright = UITouchButton.new(P("button/rightnormal.png"),P("button/rightpress.png"),handler(self, self.onRight),handler(self, self.onStop)) 
    btnright:setAnchorPoint(ccp(0.5, 0.5))
    btnright:setPosition(500-160,weaponbg:boundingBox():getMidY())
-   self:addChild(btnright)
+   layer:addChild(btnright)
 end
+
+--设置主公血量
+function BattleScene:setPlayerHpPer(num)
+    if num <= 30 then
+       local texture = CCTextureCache:sharedTextureCache():addImage(P("battle/herobarred.png"))
+       self.barsp:setTexture(texture)
+    end
+    self.hpbar:setPercentage(num) 
+end
+
 
 function BattleScene:getPlayerState()
    return self.player.fsm

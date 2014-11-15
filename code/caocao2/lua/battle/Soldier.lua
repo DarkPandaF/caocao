@@ -178,13 +178,13 @@ function Soldier:setHpPer(num)
 end
 
 --扣除hp
-function Soldier:subHp(attackvalue)
+function Soldier:subHp(attackvalue,atttype)
     self.hp = self.hp - attackvalue
     self:setHpPer(self.hp/1000 * 100)
     if self.hp <= 0 then
        self.fsm:doEvent("kill")
     else
-       self:doEffect()
+       self:doEffect(atttype)
     end
 end
 
@@ -269,7 +269,7 @@ end
 function Soldier:EffecttEventCallFun(armature,moveevnettype,movementid)
     if moveevnettype == 1 or moveevnettype == 2 then
        
-       if movementid == "attackedeffect" then
+       if movementid == "attackedeffect" or movementid == "kifedeffect" or movementid == "gunedeffect" then
           armature:removeFromParentAndCleanup(false)
        end 
 
@@ -293,9 +293,19 @@ function Soldier:getEffectArmor()
    return armor
 end
 
-function Soldier:doEffect()
+function Soldier:doEffect(atttype)
+    
+    atttype =  atttype or 1
+
     local effect = self:getEffectArmor()
-    effect:getAnimation():play("attackedeffect",-1,-1,0)
+    if atttype == 1 then
+       effect:getAnimation():play("attackedeffect",-1,-1,0)
+    elseif atttype == 2 then
+       effect:getAnimation():play("kifedeffect",-1,-1,0)
+    elseif atttype == 3 then
+       effect:getAnimation():play("gunedeffect",-1,-1,0)
+    end
+  
     
     local bone = self.body:getBone("attackedpoint")
     effect:setPosition(bone:getWorldInfo():getX() , bone:getWorldInfo():getY()) 
@@ -326,13 +336,23 @@ function Soldier:doShoot()
     local endpos =    self.target:getBeShootPos()
     
     --local time = ccpDistance(shootpos, endpos) /1000 * 0.15
-    local time = 0.15
-
-    local action   = CCSequence:createWithTwoActions(CCParabolyTo:create(time,shootpos,peakpos,endpos)
+    local vcount = math.abs(shootpos.x - endpos.x) / self.scene.vsize
+    local time   = vcount * 0.04
+    
+    
+    local action = nil 
+    if vcount >= self.attackRange/2 then
+       action = CCSequence:createWithTwoActions(CCParabolyTo:create(time,shootpos,peakpos,endpos)
                                                      ,CCCallFuncN:create(playend))
+    else
+       buttet:setPosition(shootpos)
+       action = CCSequence:createWithTwoActions(CCMoveTo:create(time, endpos)
+                                                ,CCCallFuncN:create(playend))
+    end
+   
 
     buttet:runAction(action)
-    self:getParent():addChild(buttet,1000)
+    self:getParent():addChild(buttet,self:getZOrder())
 
 end
 
