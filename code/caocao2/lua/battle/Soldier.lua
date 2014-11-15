@@ -73,7 +73,7 @@ end
 function Soldier:initState()
    
    self.hp = 1000
-   self.attackRange = 10
+   self.attackRange = 20
    self.fsm:doEvent("init")
    self:scheduleUpdateWithPriorityLua(handler(self, self.update),10)
    self.body:getAnimation():registerMovementHandler(handler(self, self.MovementEventCallFun))
@@ -349,7 +349,7 @@ function Soldier:getPeakPos()
 end
 
 function Soldier:getBeShootPos()
-   local pos  = self:convertToWorldSpace(ccp(0,0))
+   local pos  = self:convertToWorldSpace(ccp(self.body:getPosition()))
    return self:getParent():convertToNodeSpace(pos)  
 end
 
