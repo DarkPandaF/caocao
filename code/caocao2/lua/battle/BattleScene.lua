@@ -124,7 +124,6 @@ end
 
 function BattleScene:initPlayer()
     local armor = Player:create(self)
-    armor:setScale(0.5)
     armor:setPosition(armor:getContentSize().width / 2 * armor:getScaleX() ,self.vpos[3])
     self.layer3:addChild(armor,4-3) 
     
