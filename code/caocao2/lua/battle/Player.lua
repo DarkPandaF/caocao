@@ -134,7 +134,7 @@ function Player:getBullet()
    end
 
    if not bullet then
-      bullet = CCSprite:create(P("battle/80001.png"))
+      bullet = CCSprite:create(P("battle/bullet_caocao.png"))
       bullet:retain()
       table.insert(self.bulletlist, bullet)
    end
