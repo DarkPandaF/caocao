@@ -36,6 +36,8 @@ end
 
 function Player:update(dt)
     
+    self:CheckBullet()
+
     if self.fsm:getState() == "walkingleft" then
         local pos = self.scene:getCanMovepos(-2)
         self:setPosition(pos)
@@ -69,8 +71,8 @@ function Player:FrameEventCallFun(bone,eventname,cid,oid)
        self:doKnifeAttack()
     end
 
-    if conditions then
-      --todo
+    if eventname == "leftshoot" then
+       self:doShootAttack()
     end
 
 end
@@ -111,6 +113,7 @@ function Player:getKnifedTarget(rect)
     return target  
 end
 
+--刀砍攻击
 function Player:doKnifeAttack()
    local target = self:getKnifedTarget(self:boundingBox())
    if target then
@@ -119,6 +122,75 @@ function Player:doKnifeAttack()
    end
 end
 
+--获得子弹
+function Player:getBullet()
+   self.bulletlist = self.bulletlist or {}
+   local bullet = nil
+   
+   for k,v in pairs(self.bulletlist) do
+       if not v:getParent() then
+          bullet = v
+       end
+   end
+
+   if not bullet then
+      bullet = CCSprite:create(P("battle/80001.png"))
+      bullet:retain()
+      table.insert(self.bulletlist, bullet)
+   end
+   return bullet
+end
+
+function Player:getShootPos()
+   local bone = self.body:getBone("right_shootingpoint")
+   local pos =  self.body:convertToWorldSpace(ccp(bone:getWorldInfo():getX() , bone:getWorldInfo():getY()))
+   return self:getParent():convertToNodeSpace(pos)
+end
+
+
+function Player:doShootAttack()
+    local bullet = self:getBullet()
+    local pos = self:getShootPos()
+    bullet:setPosition(pos)
+    bullet.gridindex = 0
+    self:getParent():addChild(bullet,self:getZOrder())
+end
+
+
+function Player:CheckBullet()
+    self.bulletlist = self.bulletlist or {}
+    for k,v in pairs(self.bulletlist) do
+         if v:getParent() then
+            local posx = v:getPositionX()
+            posx  =  posx + 6
+            v:setPositionX(posx)
+            if  posx >= self:getParent():getContentSize().width then
+                v:removeFromParentAndCleanup(false)
+            else
+                local gridindex = self.scene:getGridNum(posx)
+                v.gridindex = gridindex
+                self:doBulletAction(v)              
+            end
+
+
+
+         end 
+    end
+end
+
+function Player:doBulletAction(bullet)
+    
+     local list = self.scene.enemylist[bullet.gridindex]
+     if list ~= nil then
+       for k,v in pairs(list) do
+           if v and not v:isDead() and v:boundingBox():containsPoint(ccp(bullet:getPosition())) then
+              v:subHp(300,3)
+              bullet:removeFromParentAndCleanup(false)  
+              break
+           end
+       end
+     end       
+end
 
 
 --初始化状态机
