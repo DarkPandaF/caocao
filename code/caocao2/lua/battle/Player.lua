@@ -79,7 +79,7 @@ function Player:FrameEventCallFun(bone,eventname,cid,oid)
        self:doKnifeAttack()
     end
 
-    if eventname == "leftshoot" then
+    if eventname == "rightshoot" then
        self:doShootAttack()
     end
 
