@@ -116,7 +116,7 @@ function BattleScene:initBg()
     --     local line =  ScutCxControl.ScutLineNode:lineWithPoint(ccp(i*vsize, 0),ccp(i*vsize, 122),1,ccc4(255,255,0,255))
     --     layer3:addChild(line) 
     -- end
-
+    
     
 
     self.layer3 = layer3
