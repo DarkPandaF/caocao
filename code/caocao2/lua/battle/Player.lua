@@ -10,7 +10,7 @@ function Player:create(scene)
    local ref = Player.new()
    ref:initStateMachine()
    ref.scene = scene
-   ref.hp = 5000
+   ref.hp = 5000000
    ref.attackRange = 10
    return ref
 end
@@ -269,7 +269,7 @@ end
 function Player:subHp(attackvalue)
     self.hp = self.hp - attackvalue
     if self.hp > 0 then
-       self.scene:setPlayerHpPer(self.hp/5000 * 100)
+       self.scene:setPlayerHpPer(self.hp/5000000 * 100)
        self:doEffect()
     else
        self.fsm:doEvent("kill")

@@ -114,3 +114,22 @@ function getSuperMethod(table, methodName)
     end
     return method
 end
+
+function iskindof(obj, classname)
+    local t = type(obj)
+    local mt
+    if t == "table" then
+        mt = getmetatable(obj)
+    elseif t == "userdata" then
+        mt = tolua.getpeer(obj)
+    end
+
+    while mt do
+        if mt.__cname == classname then
+            return true
+        end
+        mt = mt.super
+    end
+
+    return false
+end

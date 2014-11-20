@@ -37,6 +37,7 @@ function BattleScene:loadArmature()
     adm:addArmatureFileInfo(P("hero/caocao/caocao.ExportJson"))
     adm:addArmatureFileInfo(P("hero/caochong/caochong.ExportJson"))
     adm:addArmatureFileInfo(P("hero/zhangrang/zhangrang.ExportJson"))
+    adm:addArmatureFileInfo(P("hero/jianggan/jianggan.ExportJson"))
     adm:addArmatureFileInfo(P("hero/commoneffect/commoneffect.ExportJson"))
 end
 
@@ -244,7 +245,15 @@ function BattleScene:initButtonLayer()
    layer:addChild(soldier1)
    
    local tmpsoldier = soldier1
-   for i=1,4 do
+
+   local  soldier2 =  SummonBtn:create(P("button/soldierbg.png"),P("button/soldierselect.png"),P("head/head002.png"),handler(self, self.onSummonSoldier2),3)
+   soldier2:setAnchorPoint(ccp(0, 1))
+   soldier2:setPosition(tmpsoldier:boundingBox():getMaxX(),tmpsoldier:boundingBox():getMaxY())
+   layer:addChild(soldier2)
+
+
+   tmpsoldier =  soldier2  
+   for i=1,3 do
       local soldier =  SummonBtn:create(P("button/soldierbg.png"),P("button/soldierselect.png"))
       soldier:setAnchorPoint(ccp(0, 1))
       soldier:setPosition(tmpsoldier:boundingBox():getMaxX(),tmpsoldier:boundingBox():getMaxY())
@@ -327,13 +336,29 @@ function BattleScene:getSoldier()
     
     local result = nil 
     for i,v in ipairs(self.soldierpool) do
-       if v and not v:getParent() then
+       if v and not v:getParent() and iskindof(v, "Soldier") then
           result = v
           break
        end
     end 
     if not result then
        result = Soldier:create("caochong",self)
+       result:retain()
+       table.insert(self.soldierpool,result)
+    end
+    return result
+end
+
+function BattleScene:getSoldier2()
+    local result = nil 
+    for i,v in ipairs(self.soldierpool) do
+       if v and not v:getParent() and iskindof(v, "SoldierClose") then
+          result = v
+          break
+       end
+    end 
+    if not result then
+       result = SoldierClose:create("jianggan",self)
        result:retain()
        table.insert(self.soldierpool,result)
     end
@@ -360,6 +385,18 @@ end
 function BattleScene:onSummonSoldier()
 
     local soldier = self:getSoldier()
+    local num = math.random(1,4)
+    soldier:setPosition(0,self.vpos[num])
+    
+    soldier.gridindex = self:getGridNum(soldier:getPositionX())
+    self:addSoldierToGrid(soldier, soldier.gridindex)
+    
+    soldier:initState()
+    self.layer3:addChild(soldier,4-num)
+end
+
+function BattleScene:onSummonSoldier2()
+    local soldier = self:getSoldier2()
     local num = math.random(1,4)
     soldier:setPosition(0,self.vpos[num])
     
