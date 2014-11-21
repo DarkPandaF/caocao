@@ -25,7 +25,7 @@ end
 function UITouchButton:onTouch(eventType, x, y)
 	
 	self.isInWork = self.isInWork or false
-	if eventType == "began" then
+	  if eventType == "began" then
        
        if self:isInTouch(x,y) then
        	  self:setSelected(true)
@@ -54,7 +54,7 @@ function UITouchButton:onTouch(eventType, x, y)
        	   self.isInWork = false
        	   self.funcrelease()
        end
-	end
+	  end
 end
 
 function UITouchButton:isInTouch(x,y)

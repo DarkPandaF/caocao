@@ -184,6 +184,7 @@ function Soldier:subHp(attackvalue,atttype)
     if self.hp <= 0 then
        self.fsm:doEvent("kill")
     else
+       self:TurnRed()
        self:doEffect(atttype)
     end
 end
@@ -308,8 +309,13 @@ function Soldier:doEffect(atttype)
   
     
     local bone = self.body:getBone("attackedpoint")
-    effect:setPosition(bone:getWorldInfo():getX() , bone:getWorldInfo():getY()) 
-    self.body:addChild(effect,100)
+    local pos = ccp(bone:getWorldInfo():getX(),bone:getWorldInfo():getY())
+    pos = self.body:convertToWorldSpace(pos)
+    pos = self:convertToNodeSpace(pos)
+    effect:setPosition(pos)
+    self:addChild(effect,100)
+
+
 end
 
 function Soldier:getBullet()
@@ -373,3 +379,8 @@ function Soldier:getBeShootPos()
    return self:getParent():convertToNodeSpace(pos)  
 end
 
+function Soldier:TurnRed()
+   self.body:setColor(ccc3(255, 255, 255))
+   local action = CCSequence:createWithTwoActions(CCTintTo:create(0.1,255,0,0),CCTintTo:create(0.01, 255, 255, 255))
+   self.body:runAction(action)
+end

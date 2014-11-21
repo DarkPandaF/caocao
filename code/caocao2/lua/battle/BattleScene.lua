@@ -11,13 +11,15 @@ function BattleScene:ctor()
    self:initButtonLayer()
    self:initPlayer()
    self:initTimer()
-   
+  
    self.soldierpool = {}
    self.enemypool   = {}
    
    --士兵列表,敌人列表
    self.soldierslist = {}
    self.enemylist = {}
+
+   self:initFort()
 end
 
 --释放资源
@@ -88,7 +90,6 @@ function BattleScene:initBg()
     layer3:setPosition(0,216)
     self:addChild(layer3)
     
-    
  --画格子 (122--to 90)
     local before = 70
     local posy = before/4
@@ -121,6 +122,17 @@ function BattleScene:initBg()
 
     self.layer3 = layer3
 end
+
+
+function BattleScene:initFort()
+   local fort = Fort:create(self)
+   fort:setAnchorPoint(ccp(0.5, 0))
+   fort:setPosition(self.layer3:getContentSize().width - 30,0)
+   self.layer3:addChild(fort,100)
+   fort.gridindex = self:getGridNum(fort:getPositionX())
+   self:addEnemyToGrid(fort,fort.gridindex)
+end
+
 
 function BattleScene:initPlayer()
     local armor = Player:create(self)
@@ -237,7 +249,30 @@ function BattleScene:initButtonLayer()
    layer:addChild(hpbar)
    self.barsp = barsp
    self.hpbar = hpbar
+   
 
+   local bossbarbg = CCSprite:create(P("battle/bossbarbg.png"))
+   bossbarbg:setAnchorPoint(ccp(1, 0.5))
+   bossbarbg:setPosition(layer:getContentSize().width - 5,layer:getContentSize().height/2 + 50)
+   layer:addChild(bossbarbg)
+  
+   local bossicon = CCSprite:create(P("battle/bossicon.png"))
+   bossicon:setAnchorPoint(ccp(0.5, 0))
+   bossicon:setPosition(bossbarbg:boundingBox():getMidX(),bossbarbg:boundingBox():getMaxY()+5)
+   layer:addChild(bossicon)
+
+   local bossbarsp = CCSprite:create(P("battle/bossbar_green.png"))
+   local bossbar   = CCProgressTimer:create(bossbarsp)
+   bossbar:setType(1)
+   bossbar:setMidpoint(ccp(0, 0))
+   bossbar:setBarChangeRate(ccp(0, 1))
+   bossbar:setPercentage(100)
+   bossbar:setAnchorPoint(ccp(0.5, 0.5))
+   bossbar:setPosition(bossbarbg:getContentSize().width/2,bossbarbg:getContentSize().height/2)
+   bossbarbg:addChild(bossbar)
+   self.bossbarsp = bossbar
+   self.bossbar = bossbar
+   
    
    local soldier1 = SummonBtn:create(P("button/soldierbg.png"),P("button/soldierselect.png"),P("head/head001.png"),handler(self, self.onSummonSoldier),3)
    soldier1:setAnchorPoint(ccp(0, 1))
@@ -324,6 +359,14 @@ function BattleScene:setPlayerHpPer(num)
        self.barsp:setTexture(texture)
     end
     self.hpbar:setPercentage(num) 
+end
+
+function BattleScene:setBossHpPer(num)
+    if num <= 30 then
+       local texture = CCTextureCache:sharedTextureCache():addImage(P("battle/bossbar_red.png"))
+       self.bossbarsp:setTexture(texture)
+    end
+    self.bossbar:setPercentage(num) 
 end
 
 
