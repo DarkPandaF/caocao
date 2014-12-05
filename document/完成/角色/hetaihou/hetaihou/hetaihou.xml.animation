@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<AnimationProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectDir>E:\caocao\trunk\document\完成\角色\hetaihou\hetaihou</ProjectDir>
+  <Version>1.3.0.1</Version>
+  <Resources>E:\caocao\trunk\document\完成\角色\hetaihou\hetaihou\Resources</Resources>
+  <Name>hetaihou</Name>
+  <JsonFileName>hetaihou.json</JsonFileName>
+  <JsonFolder>E:\caocao\trunk\document\完成\角色\hetaihou\hetaihou\Json</JsonFolder>
+  <JsonList />
+  <CanvasSize>
+    <Width>0</Width>
+    <Height>0</Height>
+  </CanvasSize>
+  <filePath>E:\caocao\trunk\document\完成\角色\hetaihou\hetaihou\hetaihou.xml.animation</filePath>
+  <ProjectType>AnimationProject</ProjectType>
+  <ResRelativePath />
+  <bBatchImage>false</bBatchImage>
+</AnimationProject>
