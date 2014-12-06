@@ -7,20 +7,6 @@
       "name": "hetaihou",
       "bone_data": [
         {
-          "name": "attackedpoint",
-          "parent": "",
-          "x": -10.217377662658691,
-          "y": 80.7274398803711,
-          "z": 21,
-          "cX": 1.0,
-          "cY": 1.0,
-          "kX": 0.0,
-          "kY": 0.0,
-          "arrow_x": 9.47713851928711E-06,
-          "arrow_y": -3.2059469958767295E-06,
-          "effectbyskeleton": true
-        },
-        {
           "name": "attack",
           "parent": "",
           "x": -63.103229522705078,
@@ -635,38 +621,6 @@
           "sc": 0.416666657,
           "mov_bone_data": [
             {
-              "name": "attackedpoint",
-              "dl": 0.0,
-              "frame_data": [
-                {
-                  "dI": -1,
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 0,
-                  "twE": 0,
-                  "tweenFrame": true
-                },
-                {
-                  "dI": -1,
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 20,
-                  "twE": 0,
-                  "tweenFrame": true
-                }
-              ]
-            },
-            {
               "name": "attack",
               "dl": 0.0,
               "frame_data": [
@@ -685,20 +639,6 @@
                 },
                 {
                   "dI": -1,
-                  "x": 156.95639038085938,
-                  "y": -0.43477630615234375,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 5,
-                  "twE": 0,
-                  "tweenFrame": true,
-                  "evt": "attact"
-                },
-                {
-                  "dI": -1,
                   "x": 0.0,
                   "y": 0.0,
                   "z": 0,
@@ -709,20 +649,6 @@
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
-                },
-                {
-                  "dI": -1,
-                  "x": -39.565170288085938,
-                  "y": 0.0,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 15,
-                  "twE": 0,
-                  "tweenFrame": true,
-                  "evt": "attact"
                 },
                 {
                   "dI": -1,
@@ -2173,38 +2099,6 @@
           "twE": 0,
           "sc": 0.416666657,
           "mov_bone_data": [
-            {
-              "name": "attackedpoint",
-              "dl": 0.0,
-              "frame_data": [
-                {
-                  "dI": -1,
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 0,
-                  "twE": 0,
-                  "tweenFrame": true
-                },
-                {
-                  "dI": -1,
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 30,
-                  "twE": 0,
-                  "tweenFrame": true
-                }
-              ]
-            },
             {
               "name": "attack",
               "dl": 0.0,
