@@ -20,6 +20,7 @@ function BattleScene:ctor()
    self.enemylist = {}
 
    self:initFort()
+   print(os.clock())
 end
 
 --释放资源
