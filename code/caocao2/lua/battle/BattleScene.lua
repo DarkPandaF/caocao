@@ -126,11 +126,8 @@ end
 
 
 function BattleScene:initFort()
-   local fort = Fort:create(self)
-   fort:setAnchorPoint(ccp(0.5, 0))
-   fort:setPosition(self.layer3:getContentSize().width - 30,0)
-   self.layer3:addChild(fort,100)
-   fort.gridindex = self:getGridNum(fort:getPositionX())
+   local fort = Fort:create(self,self.layer3,ccp(self.layer3:getContentSize().width - 50,200))
+   fort.gridindex = self:getGridNum(fort.pos.x)
    self:addEnemyToGrid(fort,fort.gridindex)
 end
 

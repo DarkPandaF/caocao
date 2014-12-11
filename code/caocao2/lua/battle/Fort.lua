@@ -1,21 +1,34 @@
-Fort = class("Fort",function()
-         return CCLayer:create()
-	   end)
+Fort = class("Fort")
 
-function Fort:ctor()
+function Fort:ctor(layer,pos)
    
-   local bg = CCSprite:create(P("battle/radio_1.png"))
-   bg:setAnchorPoint(ccp(0, 0))
-   self:setContentSize(bg:getContentSize())
-   self:addChild(bg)
-   self.bg = bg
-   self.state = 1
-   
-   self:ignoreAnchorPointForPosition(false)
+   self.layer = layer
+   self.pos = pos
+
+   local pic1 = CCSprite:create(P("icon/speak_normal01.png"))
+   pic1:setPosition(pos)
+   layer:addChild(pic1,4)
+   self.pic1 = pic1
+
+   local pic2 = CCSprite:create(P("icon/speak_normal02.png"))
+   pic2:setPosition(pos)
+   layer:addChild(pic2,3)
+   self.pic2 = pic2
+
+   local pic3 = CCSprite:create(P("icon/speak_normal03.png"))
+   pic3:setPosition(pos)
+   layer:addChild(pic3,2)
+   self.pic3 = pic3
+
+   self.state = 1   
 end
 
-function Fort:create(scene)
-   local ref = Fort.new()
+function Fort:getPosition()
+  return self.pos.x,self.pos.y
+end
+
+function Fort:create(scene,layer,pos)
+   local ref = Fort.new(layer,pos)
    ref:initState()
    ref.scene = scene
    return ref
@@ -46,20 +59,33 @@ function Fort:subHp(attackvalue,atttype)
 end
 
 function Fort:setBroken()
-   local texture = CCTextureCache:sharedTextureCache():addImage(P("head/radio_1.png"))
-   self.bg:setTexture(texture)
+   local texture1 = CCTextureCache:sharedTextureCache():addImage(P("icon/speak_broken01.png"))
+   self.pic1:setTexture(texture1)
+   local texture2 = CCTextureCache:sharedTextureCache():addImage(P("icon/speak_broken02.png"))
+   self.pic1:setTexture(texture2)
+   local texture3 = CCTextureCache:sharedTextureCache():addImage(P("icon/speak_broken03.png"))
+   self.pic3:setTexture(texture3)
    self.state = 2
 end
 
 function Fort:beAttacked()
-   self.bg:setColor(ccc3(255, 255, 255))
+   
+   self.pic1:setColor(ccc3(255, 255, 255))
    local action = CCSequence:createWithTwoActions(CCTintTo:create(0.1,255,0,0),CCTintTo:create(0.01, 255, 255, 255))
-   self.bg:runAction(action)
+   self.pic1:runAction(action)
+
+   self.pic2:setColor(ccc3(255, 255, 255))
+   local action = CCSequence:createWithTwoActions(CCTintTo:create(0.1,255,0,0),CCTintTo:create(0.01, 255, 255, 255))
+   self.pic2:runAction(action)
+
+   self.pic3:setColor(ccc3(255, 255, 255))
+   local action = CCSequence:createWithTwoActions(CCTintTo:create(0.1,255,0,0),CCTintTo:create(0.01, 255, 255, 255))
+   self.pic3:runAction(action)
+   
 end
 
 function Fort:getBeShootPos()
-   local pos  = self:convertToWorldSpace(ccp(self:getPosition()))
-   return self:getParent():convertToNodeSpace(pos)  
+   return self.pos
 end
 
 
