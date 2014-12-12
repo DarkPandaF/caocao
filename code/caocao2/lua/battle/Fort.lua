@@ -9,6 +9,7 @@ function Fort:ctor(layer,pos)
    pic1:setPosition(pos)
    layer:addChild(pic1,4)
    self.pic1 = pic1
+   self.size = pic1:getContentSize()
 
    local pic2 = CCSprite:create(P("icon/speak_normal02.png"))
    pic2:setPosition(pos)
@@ -86,6 +87,10 @@ end
 
 function Fort:getBeShootPos()
    return self.pos
+end
+
+function Fort:boundingBox()
+   return CCRect(self.pos.x - self.size.width/2,self.pos.y-self.size.height/2,self.size.width,self.size.width)
 end
 
 
