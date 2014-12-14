@@ -63,7 +63,7 @@ function Fort:setBroken()
    local texture1 = CCTextureCache:sharedTextureCache():addImage(P("icon/speak_broken01.png"))
    self.pic1:setTexture(texture1)
    local texture2 = CCTextureCache:sharedTextureCache():addImage(P("icon/speak_broken02.png"))
-   self.pic1:setTexture(texture2)
+   self.pic2:setTexture(texture2)
    local texture3 = CCTextureCache:sharedTextureCache():addImage(P("icon/speak_broken03.png"))
    self.pic3:setTexture(texture3)
    self.state = 2
